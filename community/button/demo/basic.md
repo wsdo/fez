@@ -1,22 +1,47 @@
 ---
 order: 0
-title: 大纲
+title:
+  zh-CN: 按钮类型
+  en-US: Type
 ---
-## 目录
 
-### 个人博客
-
-### 技术社区
-
-### 订阅号
 ## zh-CN
 
-基础列表。
+按钮有四种类型：主按钮、次按钮、虚线按钮、危险按钮。主按钮在同一个操作区域最多出现一次。
 
 ## en-US
 
-Basic list.
+There are `primary` button, `default` button, `dashed` button and `danger` button in antd.
 
+````jsx
+import { Button } from 'antd';
+
+const data = [
+  {
+    title: 'Ant Design Title 1',
+  },
+  {
+    title: 'Ant Design Title 2',
+  },
+  {
+    title: 'Ant Design Title 3',
+  },
+  {
+    title: 'Ant Design Title 4',
+  },
+];
+ReactDOM.render(
+  <div>
+    {data.map(res=>{
+      return <Button type="primary">{res.title}</Button>
+    })}
+    <Button>Default</Button>
+    <Button type="dashed">Dashed</Button>
+    <Button type="danger">Danger</Button>
+  </div>,
+  mountNode
+);
+````
 ````jsx
 import { List, Avatar } from 'antd';
 

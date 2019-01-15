@@ -1,14 +1,10 @@
 ---
-order: 0
-title: 大纲
+order: 1
+title:
+  zh-CN: 基础列表
+  en-US: Basic list
 ---
-## 目录
 
-### 个人博客
-
-### 技术社区
-
-### 订阅号
 ## zh-CN
 
 基础列表。
