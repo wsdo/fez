@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 目录
+title: 导航
 ---
 ### [订阅号列表](https://www.fe.cx/docs/community/subs)
 
