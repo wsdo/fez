@@ -1,6 +1,6 @@
 ---
 order: 40
-category: 必备
+category: git
 title: 文件推向3个git库
 ---
 
