@@ -12,6 +12,12 @@ const { Meta } = Card
 
 const data = [
   {
+    title: '前端探秘',
+    desc: '前端探秘，探索前端你不知道的秘密',
+    wechat: 'itxishu',
+    qr:'https://open.weixin.qq.com/qr/code?username=frontshow'
+  },
+  {
     title: '前端之巅',
     desc: '关注前端发展，分享一线技术。不断学习，不断进步，登上前端之巅！',
     wechat: 'frontshow',

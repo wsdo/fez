@@ -10,4 +10,4 @@ subtitle: 前端
 
 
 > 你的订阅号提交
-记录更多 -> [issue](https://github.com/wsdo/fe/issues)
+记录更多 -> [issue](https://github.com/wsdo/gitfe/issues)
