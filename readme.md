@@ -1,7 +1,28 @@
-## 记录前端常用的资源
+---
+home: true
+# heroImage: /hero.png
+actionText: 快速上手 →
+actionLink: /devenv/
+features:
+- title: 聚合
+  details: 规范、效率、架构
+- title: 助力
+  details: 提高前端开发者效率
+- title: 覆盖全面
+  details: 覆盖大前端各个方面
+footer: MIT Licensed | Copyright © 2019-present stark wang
+---
 
-## 欢迎pr
+## 特性
+* 前端优雅的开发环境
+* 前端规范
+* 前端架构
+* 常用效率
+  
+## 内容
 
+* 基础
+* 进阶
+* 框架
 
-#### 注意点
-* 文档里面不要有 <! --> 注释
+欢迎 贡献

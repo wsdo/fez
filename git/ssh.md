@@ -1,10 +1,9 @@
 ---
-order: 10
-title: 创建SSH密钥
-category: 必备
+sidebarDepth: 4
+pageClass: custom-code-highlight
 ---
 
-##
+## ssh 
 这个密钥用来跟 github 通信，在本地终端里生成然后上传到 github
 
 ```bash
