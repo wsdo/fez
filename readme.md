@@ -25,4 +25,19 @@ footer: MIT Licensed | Copyright © 2019-present stark wang
 * 进阶
 * 框架
 
+## TODO
+- [ ] nginx
+- [ ] react
+- [ ] vuejs
+- [ ] webpack
+- [ ] linux
+- [ ] shell
+- [ ] jenkins
+- [ ] sentry
+- [ ] eslint
+- [ ] utils
+- [ ] wechat
+- [ ] soket
+- [ ] docker
+- [ ] k8s
 欢迎 贡献
