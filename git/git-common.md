@@ -463,6 +463,3 @@ git reset <file-name>
 ```sh
 git push -f <remote-name> <branch-name>
 ```
-
-## 长按关注订阅号
-![clipboard.png](/img/bVbimWe)
