@@ -1,0 +1,10 @@
+node_modules
+dist
+docs
+coverage
+/docs/.vuepress
+pubilc
+yarn.lock
+package.lock
+deploy-log.log
+test.sh
