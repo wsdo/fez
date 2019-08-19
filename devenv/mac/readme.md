@@ -1,7 +1,7 @@
 ---
 sidebarDepth: 1
 pageClass: custom-code-highlight
-title: 打造前端优雅的开发环境
+title: mac电脑使用技巧
 issueId: 2
 vssue: true
 vssue-title: devenv
@@ -9,7 +9,6 @@ vssue-id: 1
 ---
 
 
-## 打造优雅的前端开发环境
-* 终端神器
+> mac电脑使用技巧
 
 <!-- <Vssue  titile="打造前端优雅的开发环境" /> -->
