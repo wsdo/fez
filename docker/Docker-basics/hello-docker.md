@@ -13,7 +13,7 @@
 ## docker基本概念和基本操作
 Docker基于Go语言，dotCloud公司开发
 
-Docker镜像（系统盘）：只读的模版，里边包含了一套自定义的开发环境配置，可以理解为装系统的U盘。可自建镜像
+# Docker镜像（系统盘）：只读的模版，里边包含了一套自定义的开发环境配置，可以理解为装系统的U盘。可自建镜像
 
 常见操作以及一个小demo
 
@@ -40,7 +40,7 @@ $ docker search httpd
 $ docker run httpd
 ```
 
-删除镜像
+删除镜像  如果镜像有关联的container正在运行是无法删除镜像的需要停止或者删除相关联的容器
 
 ```
 $ docker rmi hello-world
@@ -77,7 +77,7 @@ hi MarginGao
 
 
 
-Docker容器（集装箱）：容器用来隔离应用，使用镜像创建
+# Docker容器（集装箱）：容器用来隔离应用，使用镜像创建
 
 创建容器
 ```
@@ -108,3 +108,18 @@ docker exec -it 容器id /bin/bash
 ```
 $ docker rm -f 1e560fca3906
 ```
+
+官方建议的批量停止容器
+
+```
+$ docker rm $(sudo docker ps -a -q)
+```
+
+批量删除容器
+```
+$ docker rm -f $(sudo docker ps -a -q)
+```
+
+-a 列出所有容器
+-p 只显示数字ID
+-f 强制删除
