@@ -78,6 +78,15 @@ $ source ~/.zshrc // 重新执行一遍zsh配置文件
 
 ![](https://gw.alicdn.com/tfs/TB1OxHTXAH0gK0jSZPiXXavapXa-1442-870.jpg)
 
+### 保留环境变量
+zsh安装好后执行node npm 等命令会失效，需要我们自己手动把bash的环境变量配置到zsh里
+```
+vim ~/.zshrc
+```
+在最后加入指令 引入bash里配置好的环境变量,重启终端
+```
+source ~/.bash_profile
+```
 ### 插件
 
 zsh提供了插件功能，我们可以通过插件来实现更加强大的功能
