@@ -1,5 +1,9 @@
 # Airbnb React/JSX 编码规范
+![20191128111650](http://s.shudong.wang/shudong/20191128111650.png)
 
+![20191128111750](http://s.shudong.wang/shudong/20191128111750.png)
+
+![20191128111818](http://s.shudong.wang/shudong/20191128111818.png)
 *算是最合理的React/JSX编码规范之一了*
 
 此编码规范主要基于目前流行的JavaScript标准，尽管某些其他约定(如async/await，静态class属性)可能在不同的项目中被引入或者被禁用。目前的状态是任何stage-3之前的规范都不包括也不推荐使用。
