@@ -22,6 +22,5 @@ mysql root -u -p
 character Set: utf8mb4
 colltion:utf8mb4_general_ci
 
-s
 
 
