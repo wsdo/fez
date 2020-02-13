@@ -18,7 +18,14 @@ footer: MIT Licensed | Copyright © 2019-present stark wang
 * 前端规范
 * 前端架构
 * 常用效率
-  
+
+## 日刊
+* markdown形式
+* 新的技术点
+* 解决方案
+* 一段不错的代码
+* 一个好的建议
+
 ## 内容
 
 * 基础

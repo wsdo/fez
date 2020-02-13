@@ -61,11 +61,11 @@ module.exports = {
 > 此插件用于单独的webpack配置中，专门用于创建dll-only-bundle。它创建了一个清单。json文件，DllReferencePlugin使用它来映射依赖项。
 
 #### 参数如下：
-context (optional): context of requests in the manifest file (defaults to the webpack context.)
-name: name of the exposed dll function (TemplatePaths: [hash] & [name] )
-path: absolute path to the manifest json file (output)
-entryOnly (boolean = true): if true, only entry points will be exposed
-type: type of the dll bundle
+* context (optional): context of requests in the manifest file (defaults to the webpack context.)
+* name: name of the exposed dll function (TemplatePaths: [hash] & [name] )
+* path: absolute path to the manifest json file (output)
+* entryOnly (boolean = true): if true, only entry points will be exposed
+* type: type of the dll bundle
 
 
 #### DllReferencePlugin 打包完成后，在项目中做对应关系使用插件 
@@ -74,12 +74,12 @@ CHINESE (SIMPLIFIED)
 该插件在主要的webpack配置中使用，它引用dll-only-bundle以要求预先构建的依赖项。
 
 #### 参数如下：
-context: (absolute path) context of requests in the manifest (or content property)
-manifest : an object containing content and name or a string to the absolute path of the JSON manifest to be loaded upon compilation
-content (optional): the mappings from request to module id (defaults to manifest.content)
-name (optional): an identifier where the dll is exposed (defaults to manifest.name) (see also externals)
-scope (optional): prefix which is used for accessing the content of the dll
-sourceType (optional): how the dll is exposed (libraryTarget)
+- context: (absolute path) context of requests in the manifest (or content property)
+- manifest : an object containing content and name or a string to the absolute path of the JSON manifest to be loaded upon compilation
+- content (optional): the mappings from request to module id (defaults to manifest.content)
+- name (optional): an identifier where the dll is exposed (defaults to manifest.name) (see also externals)
+- scope (optional): prefix which is used for accessing the content of the dll
+- sourceType (optional): how the dll is exposed (libraryTarget)
 
 #### DllReferencePlugin demo参考：
 ```
