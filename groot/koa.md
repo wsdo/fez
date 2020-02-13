@@ -47,8 +47,7 @@ app.listen(3000)
 
 然后在浏览器中打开 http://127.0.0.0:3000 就可以看到展示的结果了～
 
-![运行效果](https://img.kaikeba.com/mall/804131200202dlfl.png)
-
+![20200213173050](http://f.shudong.wang/huangxiangyang/20200213173050.png)
 
 #### async/await的使用
 由于koa2 基于node7.6版本后引入的使用async和await来实现异步，所以我们先了解以下async及await的基础概念
@@ -127,7 +126,7 @@ demo1.js
   });
 ```
 编写好后，在终端中使用node demo1.js启动服务。启动一切正常可在浏览器中使用,我们可以看到获取到的数据。
-![运行结果](https://img.kaikeba.com/mall/525131200202dfgq.png)
+![20200213173156](http://f.shudong.wang/huangxiangyang/20200213173156.png)
 图片中我们可以看到query是一个对象，而querystring就是一个普通的字符串
 
 ##### 直接从ctx中获取Get请求
