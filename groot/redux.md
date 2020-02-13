@@ -32,3 +32,10 @@ state是只读的，唯一改变state的方法就是触发action，action是一�
 单一数据源的设计让React的组件通信更加方便，便于状态的统一管理
 
 ![20200212181405](http://f.shudong.wang/starkwang/20200212181405.png)
+
+
+
+###一个redux的原生例子
+
+
+
