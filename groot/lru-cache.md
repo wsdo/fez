@@ -3,6 +3,8 @@ title: lru-cache使用
 categories: "lru-cache"
 ---
 
+![20200219162616](http://f.shudong.wang/huangxiangyang/20200219162616.png)
+
 ### lru-cache
 一个高速缓存对象，用于删除最近最少使用的项目内容
 
@@ -71,7 +73,7 @@ cache.get("key")
 > prune()
   手动遍历整个缓存，主动清除旧的条目。
 
-eg:
+设置接口数据缓存:
 ```
   let list = []
   console.log(ssrCache.has("list"))  // true or false
@@ -85,4 +87,31 @@ eg:
     }
   }
   return { list };
+```
+
+设置页面渲染缓存：
+```
+server.get('/b', async (req, res) => {
+  renderAndCache(req, res, '/page', { ...req.query });
+});
+
+// 缓存并渲染页面，具体是重新渲染还是使用缓存
+const getCacheKey = req => `${req.url}`
+async function renderAndCache(req, res, pagePath, queryParams) {
+  const key = getCacheKey(req)
+  if (ssrCache.has(key)) {
+    res.setHeader('x-cache', 'HIT')
+    res.send(ssrCache.get(key))
+    return
+  }
+  try {
+    const html = await app.renderToHTML(req, res, pagePath, queryParams)
+
+    ssrCache.set(key, html)
+    res.setHeader('x-cache', 'MISS')
+    res.send(html)
+  } catch (err) {
+    app.renderError(err, req, res, pagePath, queryParams)
+  }
+}
 ```
