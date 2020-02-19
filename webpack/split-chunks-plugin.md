@@ -67,9 +67,7 @@ module.exports = {
   }
 };
 ```
-![20200217141530](http://s.shudong.wang/shudong/20200217141530.png)
-
-W> When files paths are processed by webpack, they always contain / on Unix systems and \ on Windows. That's why using [\\/] in {cacheGroup}.test fields is necessary to represent a path separator. / or \ in {cacheGroup}.test will cause issues when used cross-platform.
+<!-- ![20200217141530](http://s.shudong.wang/shudong/20200217141530.png) -->
 
 当文件路径被 webpack 处理时，它们总是包含 / 在 Unix 系统和 Windows 上。 这就是为什么在{ cacheGroup }中使用[ / ]。 必须使用测试字段来表示路径分隔符。 / 或 in { cacheGroup }。 测试将导致问题时，使用跨平台。
 
@@ -90,11 +88,11 @@ W> When files paths are processed by webpack, they always contain / on Unix syst
 ### `splitChunks.chunks`
 
 `function (chunk) string`
-
 参数将选择哪些方式进行优化。 
-* 当这个选项是字符串时，有效值为 `all`, `async`, 和 `initial`.
+* 当这个选项是字符串时，有效值为 `all`, `async`（异步代码）, 和 `initial`(同步代码).
 * 当这个选项为 `all`时，因为这意味着即使在异步块和非异步块之间都可以生效。
-
+* 参数为`async时`：针对异步代码有效
+* 参数为`initial`时：针对同步代码有效
 webpack.config.js
 
 __webpack.config.js__
@@ -129,6 +127,38 @@ module.exports = {
 
 你可以把这个配置和 HtmlWebpackPlugin 结合起来，它会为你注入所有生成的供应商块。
 
+
+#### chunk 实战
+> 适合异步的代码 chunks: 'async'
+
+##### 当chunks 设置为 async 时：
+
+> 异步代码参考
+```
+function getComponent() {
+	return import(/* webpackChunkName:"lodash" */ 'lodash').then(({ default: _ }) => {
+		var element = document.createElement('div');
+		element.innerHTML = _.join(['Stark', 'Wang'], ' ');
+		return element;
+	})
+}
+
+getComponent().then(element => {
+	document.body.appendChild(element);
+});
+```
+
+> 同步代码参考（设置为async时：对同步的代码无效）
+```
+var element = document.createElement('div');
+element.innerHTML = _.join(['Stark', 'Wang'], ' ');
+document.body.appendChild(element);
+```
+
+##### 当chunks 设置为 all 时：
+> 上面两个代码都生效
+
+
 ### splitChunks.maxAsyncRequests
 
 number
@@ -151,11 +181,40 @@ Maximum number of parallel requests at an entry point.
 
 分割前必须共享模块的最小块数。
 
-### splitChunks.minSize
+### `splitChunks.minSize` 
 
 `number`
 
 要生成的块的最小大小(以字节为单位)。
+> 分离后的最小块文件大小，单位为字节
+
+> 把minSize: 300000000,调到非常大
+
+> 代码如果不会超过这个，就不会做代码分割了
+
+- lodash > 30000kb 就做代码分割
+
+#### 实战 minSize 参考
+
+>把minSize设置为 300000000
+
+```
+minSize:300000000,
+```
+
+__index.js__
+
+```
+import _ from "lodash";
+function CreateDom() {
+  var element = document.createElement("div");
+  element.innerHTML = _.join(["Welcome", "to", "Stark", "gitfe.com"], " ");
+  document.body.appendChild(element);
+  return element;
+}
+
+CreateDom()
+```
 
 ### splitChunks.minRemainingSize
 #### splitChunks.cacheGroups.{cacheGroup}.minRemainingSize
@@ -202,11 +261,8 @@ Maxasyncsize 和 maxSize 的区别在于 maxAsyncSize 只会影响按需加载�
 
 `number`
 
-Like maxSize, maxInitialSize can be applied globally (splitChunks.maxInitialSize), to cacheGroups (splitChunks.cacheGroups.{cacheGroup}.maxInitialSize), or to the fallback cache group (splitChunks.fallbackCacheGroup.maxInitialSize).
-
-像 maxSize 一样，maxInitialSize 可以全局应用(splitchunks.maxInitialSize) ，可以应用于 cacheGroups (splitchunks.cacheGroups. { cacheGroup } . maxInitialSize) ，也可以应用于 fallback 缓存组(splitchunks.fallbackcachegroup.maxInitialSize)。
-
-The difference between maxInitialSize and maxSize is that maxInitialSize will only affect initial load chunks.
+像 maxSize 一样，maxInitialSize 可以全局应用(splitchunks.maxInitialSize) ，
+可以应用于 cacheGroups (splitchunks.cacheGroups. { cacheGroup } . maxInitialSize) ，也可以应用于 fallback 缓存组(splitchunks.fallbackcachegroup.maxInitialSize)。
 
 Maxinitialsize 和 maxSize 的区别在于 maxInitialSize 只会影响初始加载块。
 
@@ -318,7 +374,9 @@ module.exports = {
 #### splitChunks.cacheGroups.{cacheGroup}.reuseExistingChunk
 `boolean`
 
-If the current chunk contains modules already split out from the main bundle, it will be reused instead of a new one being generated. This can impact the resulting file name of the chunk.
+- If the current chunk contains modules already split out from the main bundle, 
+
+- it will be reused instead of a new one being generated. This can impact the resulting file name of the chunk.
 
 如果当前块包含已经从主包中分离出来的模块，那么将重用它，而不是生成新的模块。 这可能会影响块的结果文件名。
 
@@ -367,9 +425,8 @@ module.exports = {
 
 #### splitChunks.cacheGroups.test
 #### splitChunks.cacheGroups.{cacheGroup}.test
-function (module, chunk) => boolean RegExp string
 
-Controls which modules are selected by this cache group. Omitting it selects all modules. It can match the absolute module resource path or chunk names. When a chunk name is matched, all modules in the chunk are selected.
+function (module, chunk) => boolean RegExp string
 
 控制此缓存组选择哪些模块。 省略它选择所有模块。 它可以匹配绝对模块资源路径或块名称。 当一个块名称匹配时，块中的所有模块都被选中。
 
@@ -379,7 +436,6 @@ Providing a function to{cacheGroup}.test:
 
 __webpack.config.js__
 
-2. webpack.config.js
 ```
 module.exports = {
   //...
@@ -406,7 +462,10 @@ module.exports = {
   }
 };
 ```
-In order to see what information is available in module and chunks objects, you can put debugger; statement in the callback. Then run your webpack build in debug mode to inspect the parameters in Chromium DevTools.
+
+> In order to see what information is available in module and chunks objects, 
+you can put debugger; statement in the callback. 
+Then run your webpack build in debug mode to inspect the parameters in Chromium DevTools.
 
 为了查看模块和块对象中有哪些信息可用，可以在回调中放置 debugger; 语句。 然后在调试模式下运行 webpack 构建来检查 Chromium 开发工具中的参数。
 
@@ -643,8 +702,6 @@ module.exports = {
 创建一个供应商块，其中包括整个应用程序中节点模块的所有代码。
 
 __webpack.config.js__
-
-2. webpack.config.js
 ```
 module.exports = {
   //...
@@ -688,4 +745,16 @@ module.exports = {
 ```
 
 这将导致分裂反应和反应多姆成为一个单独的块。 如果您不确定一个块中包含了哪些包，可以参考包分析部分获得详细信息。
+
+
+### 使用webpack-async-chunk-names-plugin解决打包后名字问题
+> 不要对异步块的文件名感到惊讶，因为我们修改了 webpack.config.js 的 output.chunkFilename。 
+如果你不喜欢基于数字的文件名，你可以使用 webpack。 命名为 chunksplugin 并转换块名称。 
+还有另一个模块 webpack-async-chunk-names-plugin，它会记住 async import 的文件名，并使用它作为块文件名。
+
+![20200219184622](http://s.shudong.wang/shudong/20200219184622.png)
+
+```
+const AsyncChunkNames = require("webpack-async-chunk-names-plugin");
+```
 
