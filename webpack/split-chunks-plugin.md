@@ -1,4 +1,7 @@
-SplitChunksPlugin
+---
+title: SplitChunksPlugin 参数详解
+categories: webpack
+---
 
 > 最初，Chunk(以及在其中导入的模块)是通过内部 webpack 图中的父子关系连接的。 使用 CommonsChunkPlugin 是为了避免它们之间的重复依赖关系，但无法进一步优化。
 
