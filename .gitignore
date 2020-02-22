@@ -8,3 +8,5 @@ yarn.lock
 package.lock
 deploy-log.log
 test.sh
+.DS_Store
+.idea
