@@ -1,7 +1,7 @@
 ---
 order: 22
 category: mac
-title: Homebrew install
+title: mac 电脑软件安装工具 brew install
 ---
 
 ## mac 电脑安装软件  brew install
