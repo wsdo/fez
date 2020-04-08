@@ -1,6 +1,6 @@
 ---
 order: 30
-title: 20.撤销commit
+title: 撤销commit
 ---
 
 ## 提交代码
