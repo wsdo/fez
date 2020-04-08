@@ -1,6 +1,6 @@
 ---
 order: 30
-title: 安装
+title: 安装nextjs
 ---
 
 [官网教程](https://nextjs.org/docs#setup)
