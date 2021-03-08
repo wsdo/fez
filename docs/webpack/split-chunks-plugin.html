@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SplitChunksPlugin 参数详解 | GIT FE</title>
+    <meta name="description" content="">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://s.shudong.wang/md.css" >
+    
+    <meta name="description" content="汇聚前端技术、规范、效率、架构">
+    <link rel="preload" href="/assets/css/0.styles.1c38f337.css" as="style"><link rel="preload" href="/assets/js/app.e12822b7.js" as="script"><link rel="preload" href="/assets/js/2.9b37cf84.js" as="script"><link rel="preload" href="/assets/js/129.cd1c61e0.js" as="script"><link rel="prefetch" href="/assets/js/10.cfd55236.js"><link rel="prefetch" href="/assets/js/100.9effb1a5.js"><link rel="prefetch" href="/assets/js/101.4e6199de.js"><link rel="prefetch" href="/assets/js/102.46c4955e.js"><link rel="prefetch" href="/assets/js/103.7141f006.js"><link rel="prefetch" href="/assets/js/104.6860e995.js"><link rel="prefetch" href="/assets/js/105.a3e58ed5.js"><link rel="prefetch" href="/assets/js/106.9a8adb61.js"><link rel="prefetch" href="/assets/js/107.41625204.js"><link rel="prefetch" href="/assets/js/108.364a56e6.js"><link rel="prefetch" href="/assets/js/109.2a818a47.js"><link rel="prefetch" href="/assets/js/11.1f1c62a6.js"><link rel="prefetch" href="/assets/js/110.52f46e24.js"><link rel="prefetch" href="/assets/js/111.828e188b.js"><link rel="prefetch" href="/assets/js/112.ca7b3b2a.js"><link rel="prefetch" href="/assets/js/113.ab948fc4.js"><link rel="prefetch" href="/assets/js/114.b4904dd4.js"><link rel="prefetch" href="/assets/js/115.f7b20359.js"><link rel="prefetch" href="/assets/js/116.ac13f80f.js"><link rel="prefetch" href="/assets/js/117.018a4731.js"><link rel="prefetch" href="/assets/js/118.6162e2cd.js"><link rel="prefetch" href="/assets/js/119.07d5fb53.js"><link rel="prefetch" href="/assets/js/12.bf606630.js"><link rel="prefetch" href="/assets/js/120.fca1368b.js"><link rel="prefetch" href="/assets/js/121.1db814d1.js"><link rel="prefetch" href="/assets/js/122.55648d74.js"><link rel="prefetch" href="/assets/js/123.d0ee40a0.js"><link rel="prefetch" href="/assets/js/124.db399ea7.js"><link rel="prefetch" href="/assets/js/125.62ba9126.js"><link rel="prefetch" href="/assets/js/126.f7d5210e.js"><link rel="prefetch" href="/assets/js/127.896fe073.js"><link rel="prefetch" href="/assets/js/128.2ff80227.js"><link rel="prefetch" href="/assets/js/13.989eeea6.js"><link rel="prefetch" href="/assets/js/130.deb65b24.js"><link rel="prefetch" href="/assets/js/131.799695bf.js"><link rel="prefetch" href="/assets/js/132.fc7d4075.js"><link rel="prefetch" href="/assets/js/133.0386eae2.js"><link rel="prefetch" href="/assets/js/134.f1c3cfb9.js"><link rel="prefetch" href="/assets/js/14.ea853fd8.js"><link rel="prefetch" href="/assets/js/15.432eb03a.js"><link rel="prefetch" href="/assets/js/16.0c777361.js"><link rel="prefetch" href="/assets/js/17.4be85ed6.js"><link rel="prefetch" href="/assets/js/18.b157b233.js"><link rel="prefetch" href="/assets/js/19.3de11422.js"><link rel="prefetch" href="/assets/js/20.4543d55a.js"><link rel="prefetch" href="/assets/js/21.ec055f5f.js"><link rel="prefetch" href="/assets/js/22.577429f2.js"><link rel="prefetch" href="/assets/js/23.3291f0c1.js"><link rel="prefetch" href="/assets/js/24.08cc5636.js"><link rel="prefetch" href="/assets/js/25.2b2e2b97.js"><link rel="prefetch" href="/assets/js/26.d8fa1478.js"><link rel="prefetch" href="/assets/js/27.d7d8c185.js"><link rel="prefetch" href="/assets/js/28.1999a3b6.js"><link rel="prefetch" href="/assets/js/29.ec94498d.js"><link rel="prefetch" href="/assets/js/3.526d6389.js"><link rel="prefetch" href="/assets/js/30.417fb137.js"><link rel="prefetch" href="/assets/js/31.2bad1b7b.js"><link rel="prefetch" href="/assets/js/32.b7a68d74.js"><link rel="prefetch" href="/assets/js/33.decdba9b.js"><link rel="prefetch" href="/assets/js/34.13f0067a.js"><link rel="prefetch" href="/assets/js/35.677cd24e.js"><link rel="prefetch" href="/assets/js/36.43694bb7.js"><link rel="prefetch" href="/assets/js/37.48d4b475.js"><link rel="prefetch" href="/assets/js/38.e9bb3096.js"><link rel="prefetch" href="/assets/js/39.12425030.js"><link rel="prefetch" href="/assets/js/4.6c31ab53.js"><link rel="prefetch" href="/assets/js/40.c6d4f460.js"><link rel="prefetch" href="/assets/js/41.00b2fba4.js"><link rel="prefetch" href="/assets/js/42.c79ed673.js"><link rel="prefetch" href="/assets/js/43.6b63e3f8.js"><link rel="prefetch" href="/assets/js/44.13327c34.js"><link rel="prefetch" href="/assets/js/45.9f689231.js"><link rel="prefetch" href="/assets/js/46.be026525.js"><link rel="prefetch" href="/assets/js/47.c04467bc.js"><link rel="prefetch" href="/assets/js/48.68e11ccb.js"><link rel="prefetch" href="/assets/js/49.d3ff1cb7.js"><link rel="prefetch" href="/assets/js/5.a013ee37.js"><link rel="prefetch" href="/assets/js/50.7a641407.js"><link rel="prefetch" href="/assets/js/51.c2af7190.js"><link rel="prefetch" href="/assets/js/52.562f3e6d.js"><link rel="prefetch" href="/assets/js/53.5e3ca243.js"><link rel="prefetch" href="/assets/js/54.b3a620d1.js"><link rel="prefetch" href="/assets/js/55.91b5b3eb.js"><link rel="prefetch" href="/assets/js/56.3d7ec524.js"><link rel="prefetch" href="/assets/js/57.e70b8032.js"><link rel="prefetch" href="/assets/js/58.458de8ce.js"><link rel="prefetch" href="/assets/js/59.9c3c26b6.js"><link rel="prefetch" href="/assets/js/6.775e4e53.js"><link rel="prefetch" href="/assets/js/60.6880c1e9.js"><link rel="prefetch" href="/assets/js/61.f1ea2369.js"><link rel="prefetch" href="/assets/js/62.fdb8087f.js"><link rel="prefetch" href="/assets/js/63.088b565d.js"><link rel="prefetch" href="/assets/js/64.f97c6e13.js"><link rel="prefetch" href="/assets/js/65.bc102b8b.js"><link rel="prefetch" href="/assets/js/66.3eaaae28.js"><link rel="prefetch" href="/assets/js/67.5ac96ce7.js"><link rel="prefetch" href="/assets/js/68.6b7f6d61.js"><link rel="prefetch" href="/assets/js/69.2aab9a32.js"><link rel="prefetch" href="/assets/js/7.27de8ac8.js"><link rel="prefetch" href="/assets/js/70.8c09937a.js"><link rel="prefetch" href="/assets/js/71.35618257.js"><link rel="prefetch" href="/assets/js/72.367bc2ba.js"><link rel="prefetch" href="/assets/js/73.065008e4.js"><link rel="prefetch" href="/assets/js/74.aef3aecd.js"><link rel="prefetch" href="/assets/js/75.cde81b67.js"><link rel="prefetch" href="/assets/js/76.0987578f.js"><link rel="prefetch" href="/assets/js/77.8e3fd262.js"><link rel="prefetch" href="/assets/js/78.a220c022.js"><link rel="prefetch" href="/assets/js/79.77a496bd.js"><link rel="prefetch" href="/assets/js/8.a945b3ca.js"><link rel="prefetch" href="/assets/js/80.f8ed66a2.js"><link rel="prefetch" href="/assets/js/81.312ca6aa.js"><link rel="prefetch" href="/assets/js/82.438e5dba.js"><link rel="prefetch" href="/assets/js/83.c7b2ed48.js"><link rel="prefetch" href="/assets/js/84.33aed426.js"><link rel="prefetch" href="/assets/js/85.fe3d1404.js"><link rel="prefetch" href="/assets/js/86.936d3fa1.js"><link rel="prefetch" href="/assets/js/87.49105536.js"><link rel="prefetch" href="/assets/js/88.9dbf212d.js"><link rel="prefetch" href="/assets/js/89.6603b723.js"><link rel="prefetch" href="/assets/js/9.da83781a.js"><link rel="prefetch" href="/assets/js/90.0f6946e9.js"><link rel="prefetch" href="/assets/js/91.dcc75e75.js"><link rel="prefetch" href="/assets/js/92.0ac41364.js"><link rel="prefetch" href="/assets/js/93.5456035b.js"><link rel="prefetch" href="/assets/js/94.eb2243f5.js"><link rel="prefetch" href="/assets/js/95.5c33a09c.js"><link rel="prefetch" href="/assets/js/96.256c3fb2.js"><link rel="prefetch" href="/assets/js/97.00cec4aa.js"><link rel="prefetch" href="/assets/js/98.5b8aa9ea.js"><link rel="prefetch" href="/assets/js/99.b462d958.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1c38f337.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8c5a01a7690cba576b8dcd4d106c0169";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">GIT FE</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/groot/" class="nav-link">技术日刊</a></div><div class="nav-item"><a href="/docs/devenv/base/" class="nav-link">开发环境</a></div><div class="nav-item"><a href="/docs/shortcuts/" class="nav-link">快捷键</a></div><div class="nav-item"><a href="/docs/webpack/" class="nav-link router-link-active">webpack</a></div><div class="nav-item"><a href="/docs/nextjs/" class="nav-link">nextjs</a></div><div class="nav-item"><a href="/docs/docker/" class="nav-link">docker</a></div><div class="nav-item"><a href="/docs/linux/" class="nav-link">linux</a></div><div class="nav-item"><a href="/docs/git/" class="nav-link">git</a></div><div class="nav-item"><a href="/docs/utils/" class="nav-link">utils</a></div><div class="nav-item"><a href="/docs/eslint/" class="nav-link">编码规范</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">react</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/react/base/" class="nav-link">react基础</a></li><li class="dropdown-item"><!----> <a href="/docs/react/advance/" class="nav-link">react进阶</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">微信生态开发</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/wechat/mini-program/" class="nav-link">小程序</a></li><li class="dropdown-item"><!----> <a href="/docs/wechat/service-account/" class="nav-link">服务号</a></li></ul></div></div><div class="nav-item"><a href="https://shudong.wang/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wsdo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/wsdo/feup" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/groot/" class="nav-link">技术日刊</a></div><div class="nav-item"><a href="/docs/devenv/base/" class="nav-link">开发环境</a></div><div class="nav-item"><a href="/docs/shortcuts/" class="nav-link">快捷键</a></div><div class="nav-item"><a href="/docs/webpack/" class="nav-link router-link-active">webpack</a></div><div class="nav-item"><a href="/docs/nextjs/" class="nav-link">nextjs</a></div><div class="nav-item"><a href="/docs/docker/" class="nav-link">docker</a></div><div class="nav-item"><a href="/docs/linux/" class="nav-link">linux</a></div><div class="nav-item"><a href="/docs/git/" class="nav-link">git</a></div><div class="nav-item"><a href="/docs/utils/" class="nav-link">utils</a></div><div class="nav-item"><a href="/docs/eslint/" class="nav-link">编码规范</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">react</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/react/base/" class="nav-link">react基础</a></li><li class="dropdown-item"><!----> <a href="/docs/react/advance/" class="nav-link">react进阶</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">微信生态开发</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/wechat/mini-program/" class="nav-link">小程序</a></li><li class="dropdown-item"><!----> <a href="/docs/wechat/service-account/" class="nav-link">服务号</a></li></ul></div></div><div class="nav-item"><a href="https://shudong.wang/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wsdo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/wsdo/feup" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/docs/webpack/" aria-current="page" class="sidebar-link">webpack 完全指南</a></li><li><a href="/docs/webpack/split-chunks-plugin.html" aria-current="page" class="active sidebar-link">SplitChunksPlugin 参数详解</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/docs/webpack/tree-shaking.html" class="sidebar-link">tree shaking</a></li></ul> </aside> <main class="page"> <div class="row theme-gitfe-page"><div class="col-md-10"><div class="theme-gitfe-content markdown-body content__default"><blockquote><p>最初，Chunk(以及在其中导入的模块)是通过内部 webpack 图中的父子关系连接的。 使用 CommonsChunkPlugin 是为了避免它们之间的重复依赖关系，但无法进一步优化。</p></blockquote> <blockquote><p>自从 webpack v4以来，CommonsChunkPlugin 被删除，以支持 optimization.splitchunk。</p></blockquote> <h2 id="默认值-defaults"><a href="#默认值-defaults" class="header-anchor">#</a> 默认值 Defaults</h2> <p>开箱即用 SplitChunksPlugin 应该对大多数用户都适用。</p> <p>默认情况下，它只影响按需块，因为更改初始块会影响 HTML 文件运行项目时应该包含的脚本标记。</p> <p>Webpack 将根据以下条件自动分割块:</p> <ul><li><p>新块可以共享，或者模块来自node_modules folder 文件夹</p></li> <li><p>新块大于30kb (在 min + gz 之前)</p></li> <li><p>当根据需要加载块时，并行请求的最大数量将低于或等于6</p></li> <li><p>在初始页面加载时，并行请求的最大数量将小于或等于4</p></li></ul> <p>当试图满足最后两个条件时，更大的块是首选的。</p> <h2 id="配置-configuration"><a href="#配置-configuration" class="header-anchor">#</a> 配置 Configuration</h2> <p>Webpack 为希望更多地控制该功能的开发人员提供了一组选项。</p> <p>选择默认配置是为了适应 web 性能的最佳实践，但是您的项目的最佳策略可能不同。 如果您正在更改配置，那么您应该测量更改的影响，以确保有真正的好处。</p> <h2 id="optimization-splitchunks"><a href="#optimization-splitchunks" class="header-anchor">#</a> optimization.splitChunks</h2> <p>This configuration object represents the default behavior of the <code>SplitChunksPlugin</code>.</p> <p>这个配置对象表示 SplitChunksPlugin 的默认行为。</p> <p><strong>webpack.config.js</strong></p> <div class="language-webpack.config.js extra-class"><pre class="language-text"><code>
+module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 30000,
+      minRemainingSize: 0,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 6,
+      maxInitialRequests: 4,
+      automaticNameDelimiter: '~',
+      automaticNameMaxLength: 30,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
+};
+</code></pre></div> <p>当文件路径被 webpack 处理时，它们总是包含 / 在 Unix 系统和 Windows 上。 这就是为什么在{ cacheGroup }中使用[ / ]。 必须使用测试字段来表示路径分隔符。 / 或 in { cacheGroup }。 测试将导致问题时，使用跨平台。</p> <h3 id="splitchunks-automaticnamedelimiter"><a href="#splitchunks-automaticnamedelimiter" class="header-anchor">#</a> <code>splitChunks.automaticNameDelimiter</code></h3> <p><code>string</code></p> <p>默认情况下，webpack 将使用块的起源和名称(例如 vendors ~ main.js)生成名称。</p> <ul><li>此选项允许您指定用于生成的名称的分隔符。</li></ul> <h3 id="splitchunks-automaticnamemaxlength"><a href="#splitchunks-automaticnamemaxlength" class="header-anchor">#</a> <code>splitChunks.automaticNameMaxLength</code></h3> <p><code>number = 109</code></p> <p>允许为 SplitChunksPlugin 生成的块名设置最大字符数。</p> <h3 id="splitchunks-chunks"><a href="#splitchunks-chunks" class="header-anchor">#</a> <code>splitChunks.chunks</code></h3> <p><code>function (chunk) string</code>
+参数将选择哪些方式进行优化。</p> <ul><li>当这个选项是字符串时，有效值为 <code>all</code>, <code>async</code>（异步代码）, 和 <code>initial</code>(同步代码).</li> <li>当这个选项为 <code>all</code>时，因为这意味着即使在异步块和非异步块之间都可以生效。</li> <li>参数为<code>async时</code>：针对异步代码有效</li> <li>参数为<code>initial</code>时：针对同步代码有效
+webpack.config.js</li></ul> <p><strong>webpack.config.js</strong></p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token operator">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// include all types of chunks</span>
+      chunks<span class="token operator">:</span> <span class="token string">'all'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>或者，您可以提供一个函数来进行更多的控制。返回值将指示是否包含每个块。</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token operator">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">chunks</span> <span class="token punctuation">(</span><span class="token parameter">chunk</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// exclude `my-excluded-chunk`</span>
+        <span class="token keyword">return</span> chunk<span class="token punctuation">.</span>name <span class="token operator">!==</span> <span class="token string">'my-excluded-chunk'</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>你可以把这个配置和 HtmlWebpackPlugin 结合起来，它会为你注入所有生成的供应商块。</p> <h4 id="chunk-实战"><a href="#chunk-实战" class="header-anchor">#</a> chunk 实战</h4> <blockquote><p>适合异步的代码 chunks: 'async'</p></blockquote> <h5 id="当chunks-设置为-async-时"><a href="#当chunks-设置为-async-时" class="header-anchor">#</a> 当chunks 设置为 async 时：</h5> <blockquote><p>异步代码参考</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>function getComponent() {
+	return import(/* webpackChunkName:&quot;lodash&quot; */ 'lodash').then(({ default: _ }) =&gt; {
+		var element = document.createElement('div');
+		element.innerHTML = _.join(['Stark', 'Wang'], ' ');
+		return element;
+	})
+}
+
+getComponent().then(element =&gt; {
+	document.body.appendChild(element);
+});
+</code></pre></div><blockquote><p>同步代码参考（设置为async时：对同步的代码无效）</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>var element = document.createElement('div');
+element.innerHTML = _.join(['Stark', 'Wang'], ' ');
+document.body.appendChild(element);
+</code></pre></div><h5 id="当chunks-设置为-all-时"><a href="#当chunks-设置为-all-时" class="header-anchor">#</a> 当chunks 设置为 all 时：</h5> <blockquote><p>上面两个代码都生效</p></blockquote> <h3 id="splitchunks-maxasyncrequests"><a href="#splitchunks-maxasyncrequests" class="header-anchor">#</a> splitChunks.maxAsyncRequests</h3> <p>number</p> <blockquote><p>Maximum number of parallel requests when on-demand loading.</p></blockquote> <p>按需加载时并行请求的最大数量。</p> <h3 id="splitchunks-maxinitialrequests"><a href="#splitchunks-maxinitialrequests" class="header-anchor">#</a> <code>splitChunks.maxInitialRequests</code></h3> <p><code>number</code></p> <p>Maximum number of parallel requests at an entry point.</p> <p>入口点上并行请求的最大数量。</p> <h3 id="splitchunks-minchunks"><a href="#splitchunks-minchunks" class="header-anchor">#</a> splitChunks.minChunks</h3> <p><code>number</code></p> <p>分割前必须共享模块的最小块数。</p> <h3 id="splitchunks-minsize"><a href="#splitchunks-minsize" class="header-anchor">#</a> <code>splitChunks.minSize</code></h3> <p><code>number</code></p> <p>要生成的块的最小大小(以字节为单位)。</p> <blockquote><p>分离后的最小块文件大小，单位为字节</p></blockquote> <blockquote><p>把minSize: 300000000,调到非常大</p></blockquote> <blockquote><p>代码如果不会超过这个，就不会做代码分割了</p></blockquote> <ul><li>lodash &gt; 30000kb 就做代码分割</li></ul> <h4 id="实战-minsize-参考"><a href="#实战-minsize-参考" class="header-anchor">#</a> 实战 minSize 参考</h4> <blockquote><p>把minSize设置为 300000000</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>minSize:300000000,
+</code></pre></div><p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>import _ from &quot;lodash&quot;;
+function CreateDom() {
+  var element = document.createElement(&quot;div&quot;);
+  element.innerHTML = _.join([&quot;Welcome&quot;, &quot;to&quot;, &quot;Stark&quot;, &quot;gitfe.com&quot;], &quot; &quot;);
+  document.body.appendChild(element);
+  return element;
+}
+
+CreateDom()
+</code></pre></div><h3 id="splitchunks-minremainingsize"><a href="#splitchunks-minremainingsize" class="header-anchor">#</a> splitChunks.minRemainingSize</h3> <h4 id="splitchunks-cachegroups-cachegroup-minremainingsize"><a href="#splitchunks-cachegroups-cachegroup-minremainingsize" class="header-anchor">#</a> splitChunks.cacheGroups.{cacheGroup}.minRemainingSize</h4> <p><code>number</code></p> <p>在 webpack 5中引入了 minremainingsize 选项，以确保分割后剩余块的最小大小超过一个限制，从而避免零大小的模块。 在“开发”模式下默认为0。 对于其他情况，splitChunks.minRemainingSize 默认值为 splitChunks.minSize，因此除了极少数需要深度控制的情况外，不需要手动指定它。</p> <p>只有当剩下一个块时，minremainingsize 才会生效。</p> <h3 id="splitchunks-maxsize"><a href="#splitchunks-maxsize" class="header-anchor">#</a> splitChunks.maxSize</h3> <p><code>number</code></p> <p>使用 maxSize (全局优化.splitchunks.maxSize / cache 组优化.splitchunks.cachegroups [ x ]。 Maxsize)告诉 webpack 尝试将比 maxSize 大的块拆分为更小的部分。 零件的尺寸至少小于最大尺寸(仅次于最大尺寸)。 该算法是确定性的，对模块的更改只会产生局部影响。 因此，当使用长期缓存时，它是可用的，并且不需要记录。 Maxsize 只是一个提示，当模块大于 maxSize 时，可能会违反 maxSize，或者分割会违反 minSize。</p> <p>当块已经有一个名称时，每个部分将从该名称派生出一个新名称。 根据 optimization.splitChunks.hidePathInfo 的值，它将添加从第一个模块名派生的键或其散列。</p> <p>maxSize option is intended to be used with HTTP/2 and long term caching. It increases the request count for better caching. It could also be used to decrease the file size for faster rebuilding.</p> <p>Maxsize 选项用于 http / 2和长期缓存。 它增加了更好的缓存请求计数。 它还可以用来减小文件大小，以便更快地重新生成。</p> <p>maxSize takes higher priority than maxInitialRequest/maxAsyncRequests. Actual priority is maxInitialRequest/maxAsyncRequests &lt; maxSize &lt; minSize.</p> <p>Maxsize 的优先级高于 maxinitialrequest / maxasyncrequests。</p> <p>Setting the value for maxSize sets the value for both maxAsyncSize and maxInitialSize.</p> <p>设置 maxSize 的值将同时设置 maxAsyncSize 和 maxInitialSize 的值。</p> <h3 id="splitchunks-maxasyncsize"><a href="#splitchunks-maxasyncsize" class="header-anchor">#</a> splitChunks.maxAsyncSize</h3> <p><code>number</code></p> <p>Like maxSize, maxAsyncSize can be applied globally (splitChunks.maxAsyncSize), to cacheGroups (splitChunks.cacheGroups.{cacheGroup}.maxAsyncSize), or to the fallback cache group (splitChunks.fallbackCacheGroup.maxAsyncSize).</p> <p>与 maxSize 一样，maxAsyncSize 可以全局应用(splitchunks.maxAsyncSize) ，也可以应用于 cacheGroups (splitchunks.cacheGroups. { cacheGroup } . maxAsyncSize)或 fallback 缓存组(splitchunks.fallbackcachegroup.asyncsize)。</p> <p>The difference between maxAsyncSize and maxSize is that maxAsyncSize will only affect on-demand loading chunks.</p> <p>Maxasyncsize 和 maxSize 的区别在于 maxAsyncSize 只会影响按需加载的块。</p> <h3 id="splitchunks-maxinitialsize"><a href="#splitchunks-maxinitialsize" class="header-anchor">#</a> splitChunks.maxInitialSize</h3> <p><code>number</code></p> <p>像 maxSize 一样，maxInitialSize 可以全局应用(splitchunks.maxInitialSize) ，
+可以应用于 cacheGroups (splitchunks.cacheGroups. { cacheGroup } . maxInitialSize) ，也可以应用于 fallback 缓存组(splitchunks.fallbackcachegroup.maxInitialSize)。</p> <p>Maxinitialsize 和 maxSize 的区别在于 maxInitialSize 只会影响初始加载块。</p> <h3 id="splitchunks-name"><a href="#splitchunks-name" class="header-anchor">#</a> splitChunks.name</h3> <p><code>boolean = true function (module, chunks, cacheGroupKey) =&gt; string</code> <code>string</code></p> <p>Also available for each cacheGroup: splitChunks.cacheGroups.{cacheGroup}.name.</p> <p>也可用于每个 cacheGroup: splitChunks.cacheGroups. { cacheGroup } . name。</p> <p>提供 true 将根据块和缓存组密钥自动生成一个名称。</p> <p>提供字符串或函数允许您使用自定义名称。 指定总是返回相同字符串的字符串或函数将把所有公共模块和供应商合并到一个块中。 这可能会导致更大的初始下载量和降低页面加载速度。</p> <p>如果您选择指定一个函数，您可能会发现 chunk.name 和 chunk.hash 属性(其中 chunk 是块数组的一个元素)在为块选择名称时特别有用。</p> <p>如果 splitchunks.name 文件与入口点名称匹配，入口点将被移除。</p> <p>建议在生产构建中将 splitchunks.name / 代码设置为 false，这样它就不会不必要地更改名称。</p> <p><strong>main.js</strong></p> <div class="language-js extra-class"><pre class="language-js"><code>
+
+<span class="token keyword">import</span> _ <span class="token keyword">from</span> <span class="token string">'lodash'</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'Hello'</span><span class="token punctuation">,</span> <span class="token string">'webpack'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><strong>webpack.config.js</strong></p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token operator">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token operator">:</span> <span class="token punctuation">{</span>
+      cacheGroups<span class="token operator">:</span> <span class="token punctuation">{</span>
+        commons<span class="token operator">:</span> <span class="token punctuation">{</span>
+          test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[\\/]node_modules[\\/]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+          <span class="token comment">// cacheGroupKey here is `commons` as the key of the cacheGroup</span>
+          <span class="token function">name</span><span class="token punctuation">(</span><span class="token parameter">module<span class="token punctuation">,</span> chunks<span class="token punctuation">,</span> cacheGroupKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> moduleFileName <span class="token operator">=</span> module<span class="token punctuation">.</span><span class="token function">identifier</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduceRight</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">const</span> allChunksNames <span class="token operator">=</span> chunks<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'~'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>cacheGroupKey<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>allChunksNames<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>moduleFileName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          chunks<span class="token operator">:</span> <span class="token string">'all'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>使用以下 splitChunks 配置运行 webpack 也会输出通用组的一个块，它的下一个名称是: commons-main-lodash。 Js.e7519d2bb8777058fa27.js (作为实际输出示例给出的哈希)。</p> <p>当为不同的分割块分配相同的名称时，所有供应商模块都被放置到一个共享块中，尽管这是不被推荐的，因为它会导致更多的代码下载。</p> <h3 id="splitchunks-automaticnameprefix"><a href="#splitchunks-automaticnameprefix" class="header-anchor">#</a> splitChunks.automaticNamePrefix</h3> <p><code>string = ''</code></p> <p>为创建的块设置名称前缀。</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  optimization<span class="token operator">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token operator">:</span> <span class="token punctuation">{</span>
+      automaticNamePrefix<span class="token operator">:</span> <span class="token string">'general-prefix'</span><span class="token punctuation">,</span>
+      cacheGroups<span class="token operator">:</span> <span class="token punctuation">{</span>
+        react<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token comment">// ...</span>
+          automaticNamePrefix<span class="token operator">:</span> <span class="token string">'react-chunks-prefix'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="splitchunks-cachegroups"><a href="#splitchunks-cachegroups" class="header-anchor">#</a> <code>splitChunks.cacheGroups</code></h3> <p>Cache groups can inherit and/or override any options from splitChunks.*; but test, priority and reuseExistingChunk can only be configured on cache group level. To disable any of the default cache groups, set them to false.</p> <p>缓存组可以继承 和/或 重写 splitChunks 中的任何选项。 splitChunks.* ; 但是 test、 priority 和 reuseExistingChunk 只能在缓存组级别上配置。 若要禁用任何默认缓存组，请将它们设置为 false。</p> <p><strong>webpack.config.js</strong></p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false
+      }
+    }
+  }
+};
+</code></pre></div><h3 id="splitchunks-cachegroups-cachegroup-priority"><a href="#splitchunks-cachegroups-cachegroup-priority" class="header-anchor">#</a> <code>splitChunks.cacheGroups.{cacheGroup}.priority</code></h3> <p><code>number</code></p> <p>一个模块可以属于多个缓存组。 优化将偏好具有更高优先级的缓存组。 默认组的优先级为负，以允许自定义组获得更高的优先级(自定义组的默认值为0)。</p> <h4 id="splitchunks-cachegroups-cachegroup-reuseexistingchunk"><a href="#splitchunks-cachegroups-cachegroup-reuseexistingchunk" class="header-anchor">#</a> splitChunks.cacheGroups.{cacheGroup}.reuseExistingChunk</h4> <p><code>boolean</code></p> <ul><li><p>If the current chunk contains modules already split out from the main bundle,</p></li> <li><p>it will be reused instead of a new one being generated. This can impact the resulting file name of the chunk.</p></li></ul> <p>如果当前块包含已经从主包中分离出来的模块，那么将重用它，而不是生成新的模块。 这可能会影响块的结果文件名。</p> <p><strong>webpack.config.js</strong></p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
+};
+</code></pre></div><h4 id="splitchunks-cachegroups-cachegroup-type"><a href="#splitchunks-cachegroups-cachegroup-type" class="header-anchor">#</a> splitChunks.cacheGroups.{cacheGroup}.type</h4> <p><code>function RegExp string</code></p> <p>Allows to assign modules to a cache group by module type.
+允许按模块类型将模块分配给缓存组。</p> <p>_<strong>webpack.config.js</strong></p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        json: {
+          type: 'json'
+        }
+      }
+    }
+  }
+};
+</code></pre></div><h4 id="splitchunks-cachegroups-test"><a href="#splitchunks-cachegroups-test" class="header-anchor">#</a> splitChunks.cacheGroups.test</h4> <h4 id="splitchunks-cachegroups-cachegroup-test"><a href="#splitchunks-cachegroups-cachegroup-test" class="header-anchor">#</a> splitChunks.cacheGroups.{cacheGroup}.test</h4> <p>function (module, chunk) =&gt; boolean RegExp string</p> <p>控制此缓存组选择哪些模块。 省略它选择所有模块。 它可以匹配绝对模块资源路径或块名称。 当一个块名称匹配时，块中的所有模块都被选中。</p> <p>Providing a function to{cacheGroup}.test:</p> <p>为{ cacheGroup } . test 提供一个函数:</p> <p><strong>webpack.config.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        svgGroup: {
+          test(module, chunks) {
+            // `module.resource` contains the absolute path of the file on disk.
+            // Note the usage of `path.sep` instead of / or \, for cross-platform compatibility.
+            const path = require('path');
+            return module.resource &amp;&amp;
+                 module.resource.endsWith('.svg') &amp;&amp;
+                 module.resource.includes(`${path.sep}cacheable_svgs${path.sep}`);
+          }
+        },
+        byModuleTypeGroup: {
+          test(module, chunks) {
+            return module.type === 'javascript/auto';
+          }
+        }
+      }
+    }
+  }
+};
+</code></pre></div><blockquote><p>In order to see what information is available in module and chunks objects,
+you can put debugger; statement in the callback.
+Then run your webpack build in debug mode to inspect the parameters in Chromium DevTools.</p></blockquote> <p>为了查看模块和块对象中有哪些信息可用，可以在回调中放置 debugger; 语句。 然后在调试模式下运行 webpack 构建来检查 Chromium 开发工具中的参数。</p> <p>Providing a RegExp to {cacheGroup}.test:</p> <p>向{ cacheGroup } . test 提供 RegExp:</p> <p><strong>webpack.config.js</strong></p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          // Note the usage of `[\\/]` as a path separator for cross-platform compatibility.
+          test: /[\\/]node_modules[\\/]|vendor[\\/]analytics_provider|vendor[\\/]other_lib/
+        }
+      }
+    }
+  }
+};
+
+</code></pre></div><h4 id="splitchunks-cachegroups-cachegroup-filename"><a href="#splitchunks-cachegroups-cachegroup-filename" class="header-anchor">#</a> splitChunks.cacheGroups.{cacheGroup}.filename</h4> <p>string function (chunkData): string</p> <p>当且仅当文件是初始块时，允许重写文件名。 在 output.filename 中提供的所有占位符在这里也可以使用。</p> <p>这个选项也可以在 splitChunks.filename 中全局设置，但是不推荐这样做，如果 splitchunks.chunk 没有设置为‘ initial’ ，可能会导致错误。 避免全局设置。</p> <p><strong>webpack.config.js</strong></p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          filename: '[name].bundle.js'
+        }
+      }
+    }
+  }
+};
+
+</code></pre></div><p>And as a function:</p> <p>作为一个函数:</p> <p>webpack.config.js</p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          filename: (chunkData) =&gt; {
+            // Use chunkData object for generating filename string based on your requirements
+            return `${chunkData.chunk.name}-bundle.js`;
+          }
+        }
+      }
+    }
+  }
+};
+</code></pre></div><p>It is possible to create a folder structure by providing path prefixing the filename: 'js/vendor/bundle.js'.</p> <p>可以通过提供文件名前缀“ js / vendor / bundle. js”的路径来创建文件夹结构。</p> <p>webpack.config.js</p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          filename: 'js/[name]/bundle.js'
+        }
+      }
+    }
+  }
+};
+</code></pre></div><h4 id="splitchunks-cachegroups-cachegroup-enforce"><a href="#splitchunks-cachegroups-cachegroup-enforce" class="header-anchor">#</a> splitChunks.cacheGroups.{cacheGroup}.enforce</h4> <p>boolean = false</p> <p>告诉 webpack 忽略 splitChunks.minSize，splitchunks.minchunk，splitChunks.maxAsyncRequests 和 splitChunks.maxInitialRequests 选项，并始终为这个缓存组创建块。</p> <p><strong>webpack.config.js</strong></p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          enforce: true
+        }
+      }
+    }
+  }
+};
+</code></pre></div><h4 id="splitchunks-cachegroups-cachegroup-idhint"><a href="#splitchunks-cachegroups-cachegroup-idhint" class="header-anchor">#</a> splitChunks.cacheGroups.{cacheGroup}.idHint</h4> <p>string</p> <p>Sets the hint for chunk id. It will be added to chunk's filename.</p> <p>设置块 id 的提示。它将被添加到块的文件名中。</p> <p>webpack.config.js</p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        defaultVendors: {
+          idHint: 'vendors'
+        }
+      }
+    }
+  }
+};
+</code></pre></div><p>例子
+默认值: 示例1
+// index.js</p> <p>import('./a'); // dynamic import
+// a.js
+import 'react';</p> <p>//...
+Result: A separate chunk would be created containing react. At the import call this chunk is loaded in parallel to the original chunk containing ./a.</p> <p>结果: 一个包含反应的独立块被创建出来。 在导入调用时，该块与包含该块的原始块并行加载。 / a.</p> <p>为什么:</p> <p>条件1: 块包含来自node_modules</p> <p>条件第2项:r eact is bigger than 30kb 大于30kb</p> <p>条件3: 导入调用中的并行请求数为2</p> <p>条件4: 在初始页面加载时不影响请求</p> <p>这背后的原因是什么？ react可能不会像应用程序代码那样经常变化。 通过将其移动到一个单独的块中，这个块可以与你的应用程序代码分开缓存(假设你正在使用 chunkhash、 records、 Cache-Control 或其他长期缓存方法)。</p> <p>默认值: 示例2
+// entry.js</p> <p>// dynamic imports</p> <div class="language- extra-class"><pre class="language-text"><code>import('./a');
+import('./b');
+</code></pre></div><p>// a.js
+import './helpers'; // helpers is 40kb in size</p> <p>//...
+// b.js
+import './helpers';
+import './more-helpers'; // more-helpers is also 40kb in size</p> <p>//...
+Result: A separate chunk would be created containing ./helpers and all dependencies of it. At the import calls this chunk is loaded in parallel to the original chunks.</p> <p>结果: 将创建一个包含。 / helpers 及其所有依赖关系。 在导入调用时，这个块与原始块并行加载。</p> <p>Why:</p> <p>为什么:</p> <p>Condition 1: The chunk is shared between both import calls 条件1: 这个块在两个导入调用之间共享
+Condition 2: 条件第2项:helpers is bigger than 30kb 大于30kb
+Condition 3: Number of parallel requests at the import calls is 2 条件3: 导入调用中的并行请求数为2
+Condition 4: Doesn't affect request at initial page load 条件4: 在初始页面加载时不影响请求
+Putting the content of helpers into each chunk will result into its code being downloaded twice. By using a separate chunk this will only happen once. We pay the cost of an additional request, which could be considered a tradeoff. That's why there is a minimum size of 30kb.</p> <p>将 helpers 的内容放入每个块将导致其代码被下载两次。 通过使用单独的块，这种情况只会发生一次。 我们支付额外请求的费用，这可以被认为是一种折衷。 这就是为什么最小的大小是30kb。</p> <p>Split Chunks: Example 1
+分块: 例1
+Create a commons chunk, which includes all code shared between entry points.</p> <p>创建一个公共块，其中包括入口点之间共享的所有代码。</p> <p><strong>webpack.config.js</strong></p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          name: 'commons',
+          chunks: 'initial',
+          minChunks: 2
+        }
+      }
+    }
+  }
+};
+</code></pre></div><p>这种配置可以放大您的初始捆绑包，建议在不需要立即使用模块时使用动态导入。</p> <p>分块: 例2
+创建一个供应商块，其中包括整个应用程序中节点模块的所有代码。</p> <p><strong>webpack.config.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  }
+};
+</code></pre></div><p>这可能导致包含所有外部包的大块。 建议只包含您的核心框架和实用程序，并动态加载其余的依赖项。</p> <p>分块: 例3
+创建一个自定义供应商块，其中包含与 RegExp 匹配的某些节点模块包。</p> <p><strong>webpack.config.js</strong></p> <ol start="2"><li>webpack.config.js</li></ol> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        }
+      }
+    }
+  }
+};
+</code></pre></div><p>这将导致分裂反应和反应多姆成为一个单独的块。 如果您不确定一个块中包含了哪些包，可以参考包分析部分获得详细信息。</p> <h3 id="使用webpack-async-chunk-names-plugin解决打包后名字问题"><a href="#使用webpack-async-chunk-names-plugin解决打包后名字问题" class="header-anchor">#</a> 使用webpack-async-chunk-names-plugin解决打包后名字问题</h3> <blockquote><p>不要对异步块的文件名感到惊讶，因为我们修改了 webpack.config.js 的 output.chunkFilename。
+如果你不喜欢基于数字的文件名，你可以使用 webpack。 命名为 chunksplugin 并转换块名称。
+还有另一个模块 webpack-async-chunk-names-plugin，它会记住 async import 的文件名，并使用它作为块文件名。</p></blockquote> <p><img src="http://s.shudong.wang/shudong/20200219184622.png" alt="20200219184622"></p> <div class="language- extra-class"><pre class="language-text"><code>const AsyncChunkNames = require(&quot;webpack-async-chunk-names-plugin&quot;);
+</code></pre></div></div> <!----></div> <div class="col-md-2"><div class="gitfe-page-toc"><ul class="sidebar-links theme-gitfe-page-sider sidebar-sub-header"><li><a href="/docs/webpack/split-chunks-plugin.html#默认值 Defaults">默认值 Defaults</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#配置 Configuration">配置 Configuration</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#optimization.splitChunks">optimization.splitChunks</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.automaticNameDelimiter">splitChunks.automaticNameDelimiter</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.automaticNameMaxLength">splitChunks.automaticNameMaxLength</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.chunks">splitChunks.chunks</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.maxAsyncRequests">splitChunks.maxAsyncRequests</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.maxInitialRequests">splitChunks.maxInitialRequests</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.minChunks">splitChunks.minChunks</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.minSize">splitChunks.minSize</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.minRemainingSize">splitChunks.minRemainingSize</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.maxSize">splitChunks.maxSize</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.maxAsyncSize">splitChunks.maxAsyncSize</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.maxInitialSize">splitChunks.maxInitialSize</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.name">splitChunks.name</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.automaticNamePrefix">splitChunks.automaticNamePrefix</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.cacheGroups">splitChunks.cacheGroups</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#splitChunks.cacheGroups.{cacheGroup}.priority">splitChunks.cacheGroups.{cacheGroup}.priority</a></li><li><a href="/docs/webpack/split-chunks-plugin.html#使用webpack-async-chunk-names-plugin解决打包后名字问题">使用webpack-async-chunk-names-plugin解决打包后名字问题</a></li></ul></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com//wsdo/feup/edit/master/docs/webpack/split-chunks-plugin.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">a year ago</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/webpack/" class="prev router-link-active">webpack 完全指南</a></span> <span class="next"><a href="/docs/webpack/tree-shaking.html">tree shaking</a>→
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e12822b7.js" defer></script><script src="/assets/js/2.9b37cf84.js" defer></script><script src="/assets/js/129.cd1c61e0.js" defer></script>
+  </body>
+</html>

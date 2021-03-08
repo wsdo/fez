@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>GIT FE</title>
+    <meta name="description" content="">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://s.shudong.wang/md.css" >
+    
+    <meta name="description" content="Dockerfiles use a simple DSL which allows you to automate the steps you would normally manually take to create an image.">
+    <link rel="preload" href="/assets/css/0.styles.1c38f337.css" as="style"><link rel="preload" href="/assets/js/app.e12822b7.js" as="script"><link rel="preload" href="/assets/js/2.9b37cf84.js" as="script"><link rel="preload" href="/assets/js/49.d3ff1cb7.js" as="script"><link rel="prefetch" href="/assets/js/10.cfd55236.js"><link rel="prefetch" href="/assets/js/100.9effb1a5.js"><link rel="prefetch" href="/assets/js/101.4e6199de.js"><link rel="prefetch" href="/assets/js/102.46c4955e.js"><link rel="prefetch" href="/assets/js/103.7141f006.js"><link rel="prefetch" href="/assets/js/104.6860e995.js"><link rel="prefetch" href="/assets/js/105.a3e58ed5.js"><link rel="prefetch" href="/assets/js/106.9a8adb61.js"><link rel="prefetch" href="/assets/js/107.41625204.js"><link rel="prefetch" href="/assets/js/108.364a56e6.js"><link rel="prefetch" href="/assets/js/109.2a818a47.js"><link rel="prefetch" href="/assets/js/11.1f1c62a6.js"><link rel="prefetch" href="/assets/js/110.52f46e24.js"><link rel="prefetch" href="/assets/js/111.828e188b.js"><link rel="prefetch" href="/assets/js/112.ca7b3b2a.js"><link rel="prefetch" href="/assets/js/113.ab948fc4.js"><link rel="prefetch" href="/assets/js/114.b4904dd4.js"><link rel="prefetch" href="/assets/js/115.f7b20359.js"><link rel="prefetch" href="/assets/js/116.ac13f80f.js"><link rel="prefetch" href="/assets/js/117.018a4731.js"><link rel="prefetch" href="/assets/js/118.6162e2cd.js"><link rel="prefetch" href="/assets/js/119.07d5fb53.js"><link rel="prefetch" href="/assets/js/12.bf606630.js"><link rel="prefetch" href="/assets/js/120.fca1368b.js"><link rel="prefetch" href="/assets/js/121.1db814d1.js"><link rel="prefetch" href="/assets/js/122.55648d74.js"><link rel="prefetch" href="/assets/js/123.d0ee40a0.js"><link rel="prefetch" href="/assets/js/124.db399ea7.js"><link rel="prefetch" href="/assets/js/125.62ba9126.js"><link rel="prefetch" href="/assets/js/126.f7d5210e.js"><link rel="prefetch" href="/assets/js/127.896fe073.js"><link rel="prefetch" href="/assets/js/128.2ff80227.js"><link rel="prefetch" href="/assets/js/129.cd1c61e0.js"><link rel="prefetch" href="/assets/js/13.989eeea6.js"><link rel="prefetch" href="/assets/js/130.deb65b24.js"><link rel="prefetch" href="/assets/js/131.799695bf.js"><link rel="prefetch" href="/assets/js/132.fc7d4075.js"><link rel="prefetch" href="/assets/js/133.0386eae2.js"><link rel="prefetch" href="/assets/js/134.f1c3cfb9.js"><link rel="prefetch" href="/assets/js/14.ea853fd8.js"><link rel="prefetch" href="/assets/js/15.432eb03a.js"><link rel="prefetch" href="/assets/js/16.0c777361.js"><link rel="prefetch" href="/assets/js/17.4be85ed6.js"><link rel="prefetch" href="/assets/js/18.b157b233.js"><link rel="prefetch" href="/assets/js/19.3de11422.js"><link rel="prefetch" href="/assets/js/20.4543d55a.js"><link rel="prefetch" href="/assets/js/21.ec055f5f.js"><link rel="prefetch" href="/assets/js/22.577429f2.js"><link rel="prefetch" href="/assets/js/23.3291f0c1.js"><link rel="prefetch" href="/assets/js/24.08cc5636.js"><link rel="prefetch" href="/assets/js/25.2b2e2b97.js"><link rel="prefetch" href="/assets/js/26.d8fa1478.js"><link rel="prefetch" href="/assets/js/27.d7d8c185.js"><link rel="prefetch" href="/assets/js/28.1999a3b6.js"><link rel="prefetch" href="/assets/js/29.ec94498d.js"><link rel="prefetch" href="/assets/js/3.526d6389.js"><link rel="prefetch" href="/assets/js/30.417fb137.js"><link rel="prefetch" href="/assets/js/31.2bad1b7b.js"><link rel="prefetch" href="/assets/js/32.b7a68d74.js"><link rel="prefetch" href="/assets/js/33.decdba9b.js"><link rel="prefetch" href="/assets/js/34.13f0067a.js"><link rel="prefetch" href="/assets/js/35.677cd24e.js"><link rel="prefetch" href="/assets/js/36.43694bb7.js"><link rel="prefetch" href="/assets/js/37.48d4b475.js"><link rel="prefetch" href="/assets/js/38.e9bb3096.js"><link rel="prefetch" href="/assets/js/39.12425030.js"><link rel="prefetch" href="/assets/js/4.6c31ab53.js"><link rel="prefetch" href="/assets/js/40.c6d4f460.js"><link rel="prefetch" href="/assets/js/41.00b2fba4.js"><link rel="prefetch" href="/assets/js/42.c79ed673.js"><link rel="prefetch" href="/assets/js/43.6b63e3f8.js"><link rel="prefetch" href="/assets/js/44.13327c34.js"><link rel="prefetch" href="/assets/js/45.9f689231.js"><link rel="prefetch" href="/assets/js/46.be026525.js"><link rel="prefetch" href="/assets/js/47.c04467bc.js"><link rel="prefetch" href="/assets/js/48.68e11ccb.js"><link rel="prefetch" href="/assets/js/5.a013ee37.js"><link rel="prefetch" href="/assets/js/50.7a641407.js"><link rel="prefetch" href="/assets/js/51.c2af7190.js"><link rel="prefetch" href="/assets/js/52.562f3e6d.js"><link rel="prefetch" href="/assets/js/53.5e3ca243.js"><link rel="prefetch" href="/assets/js/54.b3a620d1.js"><link rel="prefetch" href="/assets/js/55.91b5b3eb.js"><link rel="prefetch" href="/assets/js/56.3d7ec524.js"><link rel="prefetch" href="/assets/js/57.e70b8032.js"><link rel="prefetch" href="/assets/js/58.458de8ce.js"><link rel="prefetch" href="/assets/js/59.9c3c26b6.js"><link rel="prefetch" href="/assets/js/6.775e4e53.js"><link rel="prefetch" href="/assets/js/60.6880c1e9.js"><link rel="prefetch" href="/assets/js/61.f1ea2369.js"><link rel="prefetch" href="/assets/js/62.fdb8087f.js"><link rel="prefetch" href="/assets/js/63.088b565d.js"><link rel="prefetch" href="/assets/js/64.f97c6e13.js"><link rel="prefetch" href="/assets/js/65.bc102b8b.js"><link rel="prefetch" href="/assets/js/66.3eaaae28.js"><link rel="prefetch" href="/assets/js/67.5ac96ce7.js"><link rel="prefetch" href="/assets/js/68.6b7f6d61.js"><link rel="prefetch" href="/assets/js/69.2aab9a32.js"><link rel="prefetch" href="/assets/js/7.27de8ac8.js"><link rel="prefetch" href="/assets/js/70.8c09937a.js"><link rel="prefetch" href="/assets/js/71.35618257.js"><link rel="prefetch" href="/assets/js/72.367bc2ba.js"><link rel="prefetch" href="/assets/js/73.065008e4.js"><link rel="prefetch" href="/assets/js/74.aef3aecd.js"><link rel="prefetch" href="/assets/js/75.cde81b67.js"><link rel="prefetch" href="/assets/js/76.0987578f.js"><link rel="prefetch" href="/assets/js/77.8e3fd262.js"><link rel="prefetch" href="/assets/js/78.a220c022.js"><link rel="prefetch" href="/assets/js/79.77a496bd.js"><link rel="prefetch" href="/assets/js/8.a945b3ca.js"><link rel="prefetch" href="/assets/js/80.f8ed66a2.js"><link rel="prefetch" href="/assets/js/81.312ca6aa.js"><link rel="prefetch" href="/assets/js/82.438e5dba.js"><link rel="prefetch" href="/assets/js/83.c7b2ed48.js"><link rel="prefetch" href="/assets/js/84.33aed426.js"><link rel="prefetch" href="/assets/js/85.fe3d1404.js"><link rel="prefetch" href="/assets/js/86.936d3fa1.js"><link rel="prefetch" href="/assets/js/87.49105536.js"><link rel="prefetch" href="/assets/js/88.9dbf212d.js"><link rel="prefetch" href="/assets/js/89.6603b723.js"><link rel="prefetch" href="/assets/js/9.da83781a.js"><link rel="prefetch" href="/assets/js/90.0f6946e9.js"><link rel="prefetch" href="/assets/js/91.dcc75e75.js"><link rel="prefetch" href="/assets/js/92.0ac41364.js"><link rel="prefetch" href="/assets/js/93.5456035b.js"><link rel="prefetch" href="/assets/js/94.eb2243f5.js"><link rel="prefetch" href="/assets/js/95.5c33a09c.js"><link rel="prefetch" href="/assets/js/96.256c3fb2.js"><link rel="prefetch" href="/assets/js/97.00cec4aa.js"><link rel="prefetch" href="/assets/js/98.5b8aa9ea.js"><link rel="prefetch" href="/assets/js/99.b462d958.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1c38f337.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8c5a01a7690cba576b8dcd4d106c0169";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">GIT FE</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/groot/" class="nav-link">技术日刊</a></div><div class="nav-item"><a href="/docs/devenv/base/" class="nav-link">开发环境</a></div><div class="nav-item"><a href="/docs/shortcuts/" class="nav-link">快捷键</a></div><div class="nav-item"><a href="/docs/webpack/" class="nav-link">webpack</a></div><div class="nav-item"><a href="/docs/nextjs/" class="nav-link">nextjs</a></div><div class="nav-item"><a href="/docs/docker/" class="nav-link router-link-active">docker</a></div><div class="nav-item"><a href="/docs/linux/" class="nav-link">linux</a></div><div class="nav-item"><a href="/docs/git/" class="nav-link">git</a></div><div class="nav-item"><a href="/docs/utils/" class="nav-link">utils</a></div><div class="nav-item"><a href="/docs/eslint/" class="nav-link">编码规范</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">react</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/react/base/" class="nav-link">react基础</a></li><li class="dropdown-item"><!----> <a href="/docs/react/advance/" class="nav-link">react进阶</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">微信生态开发</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/wechat/mini-program/" class="nav-link">小程序</a></li><li class="dropdown-item"><!----> <a href="/docs/wechat/service-account/" class="nav-link">服务号</a></li></ul></div></div><div class="nav-item"><a href="https://shudong.wang/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wsdo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/wsdo/feup" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/groot/" class="nav-link">技术日刊</a></div><div class="nav-item"><a href="/docs/devenv/base/" class="nav-link">开发环境</a></div><div class="nav-item"><a href="/docs/shortcuts/" class="nav-link">快捷键</a></div><div class="nav-item"><a href="/docs/webpack/" class="nav-link">webpack</a></div><div class="nav-item"><a href="/docs/nextjs/" class="nav-link">nextjs</a></div><div class="nav-item"><a href="/docs/docker/" class="nav-link router-link-active">docker</a></div><div class="nav-item"><a href="/docs/linux/" class="nav-link">linux</a></div><div class="nav-item"><a href="/docs/git/" class="nav-link">git</a></div><div class="nav-item"><a href="/docs/utils/" class="nav-link">utils</a></div><div class="nav-item"><a href="/docs/eslint/" class="nav-link">编码规范</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">react</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/react/base/" class="nav-link">react基础</a></li><li class="dropdown-item"><!----> <a href="/docs/react/advance/" class="nav-link">react进阶</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">微信生态开发</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/wechat/mini-program/" class="nav-link">小程序</a></li><li class="dropdown-item"><!----> <a href="/docs/wechat/service-account/" class="nav-link">服务号</a></li></ul></div></div><div class="nav-item"><a href="https://shudong.wang/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Blog
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wsdo" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/wsdo/feup" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/docs/docker/Dockerfile-alias.html" class="sidebar-link">/docs/docker/Dockerfile-alias.html</a></li><li><a href="/docs/docker/" aria-current="page" class="sidebar-link">git 基础、进阶</a></li><li><a href="/docs/docker/dockerfile-reference-en.html" aria-current="page" class="active sidebar-link">/docs/docker/dockerfile-reference-en.html</a><ul class="sidebar-sub-headers"></ul></li></ul> </aside> <main class="page"> <div class="row theme-gitfe-page"><div class="col-md-10"><div class="theme-gitfe-content markdown-body content__default"><h1 id="dockerfile-reference"><a href="#dockerfile-reference" class="header-anchor">#</a> Dockerfile reference</h1> <p>Docker can build images automatically by reading the instructions from a
+<code>Dockerfile</code>. A <code>Dockerfile</code> is a text document that contains all the commands a
+user could call on the command line to assemble an image. Using <code>docker build</code>
+users can create an automated build that executes several command-line
+instructions in succession.</p> <p>This page describes the commands you can use in a <code>Dockerfile</code>. When you are
+done reading this page, refer to the <a href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/" target="_blank" rel="noopener noreferrer"><code>Dockerfile</code> Best
+Practices<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> for a tip-oriented guide.</p> <h2 id="usage"><a href="#usage" class="header-anchor">#</a> Usage</h2> <p>The <a href="/docs/docker/commandline/build.html"><code>docker build</code></a> command builds an image from
+a <code>Dockerfile</code> and a <em>context</em>. The build's context is the set of files at a
+specified location <code>PATH</code> or <code>URL</code>. The <code>PATH</code> is a directory on your local
+filesystem. The <code>URL</code> is a Git repository location.</p> <p>A context is processed recursively. So, a <code>PATH</code> includes any subdirectories and
+the <code>URL</code> includes the repository and its submodules. This example shows a
+build command that uses the current directory as context:</p> <div class="language- extra-class"><pre><code>$ docker build .
+Sending build context to Docker daemon  6.51 MB
+...
+</code></pre></div><p>The build is run by the Docker daemon, not by the CLI. The first thing a build
+process does is send the entire context (recursively) to the daemon.  In most
+cases, it's best to start with an empty directory as context and keep your
+Dockerfile in that directory. Add only the files needed for building the
+Dockerfile.</p> <blockquote><p><strong>Warning</strong>: Do not use your root directory, <code>/</code>, as the <code>PATH</code> as it causes
+the build to transfer the entire contents of your hard drive to the Docker
+daemon.</p></blockquote> <p>To use a file in the build context, the <code>Dockerfile</code> refers to the file specified
+in an instruction, for example,  a <code>COPY</code> instruction. To increase the build's
+performance, exclude files and directories by adding a <code>.dockerignore</code> file to
+the context directory.  For information about how to <a href="#dockerignore-file">create a <code>.dockerignore</code>
+file</a> see the documentation on this page.</p> <p>Traditionally, the <code>Dockerfile</code> is called <code>Dockerfile</code> and located in the root
+of the context. You use the <code>-f</code> flag with <code>docker build</code> to point to a Dockerfile
+anywhere in your file system.</p> <div class="language- extra-class"><pre><code>$ docker build -f /path/to/a/Dockerfile .
+</code></pre></div><p>You can specify a repository and tag at which to save the new image if
+the build succeeds:</p> <div class="language- extra-class"><pre><code>$ docker build -t shykes/myapp .
+</code></pre></div><p>To tag the image into multiple repositories after the build,
+add multiple <code>-t</code> parameters when you run the <code>build</code> command:</p> <div class="language- extra-class"><pre><code>$ docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .
+</code></pre></div><p>Before the Docker daemon runs the instructions in the <code>Dockerfile</code>, it performs
+a preliminary validation of the <code>Dockerfile</code> and returns an error if the syntax is incorrect:</p> <div class="language- extra-class"><pre><code>$ docker build -t test/myapp .
+Sending build context to Docker daemon 2.048 kB
+Error response from daemon: Unknown instruction: RUNCMD
+</code></pre></div><p>The Docker daemon runs the instructions in the <code>Dockerfile</code> one-by-one,
+committing the result of each instruction
+to a new image if necessary, before finally outputting the ID of your
+new image. The Docker daemon will automatically clean up the context you
+sent.</p> <p>Note that each instruction is run independently, and causes a new image
+to be created - so <code>RUN cd /tmp</code> will not have any effect on the next
+instructions.</p> <p>Whenever possible, Docker will re-use the intermediate images (cache),
+to accelerate the <code>docker build</code> process significantly. This is indicated by
+the <code>Using cache</code> message in the console output.
+(For more information, see the <a href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#build-cache" target="_blank" rel="noopener noreferrer">Build cache section<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> in the
+<code>Dockerfile</code> best practices guide):</p> <div class="language- extra-class"><pre><code>$ docker build -t svendowideit/ambassador .
+Sending build context to Docker daemon 15.36 kB
+Step 1/4 : FROM alpine:3.2
+ ---&gt; 31f630c65071
+Step 2/4 : MAINTAINER SvenDowideit@home.org.au
+ ---&gt; Using cache
+ ---&gt; 2a1c91448f5f
+Step 3/4 : RUN apk update &amp;&amp;      apk add socat &amp;&amp;        rm -r /var/cache/
+ ---&gt; Using cache
+ ---&gt; 21ed6e7fbb73
+Step 4/4 : CMD env | grep _TCP= | (sed 's/.*_PORT_\([0-9]*\)_TCP=tcp:\/\/\(.*\):\(.*\)/socat -t 100000000 TCP4-LISTEN:\1,fork,reuseaddr TCP4:\2:\3 \&amp;/' &amp;&amp; echo wait) | sh
+ ---&gt; Using cache
+ ---&gt; 7ea8aef582cc
+Successfully built 7ea8aef582cc
+</code></pre></div><p>Build cache is only used from images that have a local parent chain. This means
+that these images were created by previous builds or the whole chain of images
+was loaded with <code>docker load</code>. If you wish to use build cache of a specific
+image you can specify it with <code>--cache-from</code> option. Images specified with
+<code>--cache-from</code> do not need to have a parent chain and may be pulled from other
+registries.</p> <p>When you're done with your build, you're ready to look into <a href="https://docs.docker.com/engine/tutorials/dockerrepos/#/contributing-to-docker-hub" target="_blank" rel="noopener noreferrer"><em>Pushing a
+repository to its registry</em><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h2 id="buildkit"><a href="#buildkit" class="header-anchor">#</a> BuildKit</h2> <p>Starting with version 18.09, Docker supports a new backend for executing your
+builds that is provided by the <a href="https://github.com/moby/buildkit" target="_blank" rel="noopener noreferrer">moby/buildkit<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+project. The BuildKit backend provides many benefits compared to the old
+implementation. For example, BuildKit can:</p> <ul><li>Detect and skip executing unused build stages</li> <li>Parallelize building independent build stages</li> <li>Incrementally transfer only the changed files in your build context between builds</li> <li>Detect and skip transferring unused files in your build context</li> <li>Use external Dockerfile implementations with many new features</li> <li>Avoid side-effects with rest of the API (intermediate images and containers)</li> <li>Prioritize your build cache for automatic pruning</li></ul> <p>To use the BuildKit backend, you need to set an environment variable
+<code>DOCKER_BUILDKIT=1</code> on the CLI before invoking <code>docker build</code>.</p> <p>To learn about the experimental Dockerfile syntax available to BuildKit-based
+builds <a href="https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/experimental.md" target="_blank" rel="noopener noreferrer">refer to the documentation in the BuildKit repository<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h2 id="format"><a href="#format" class="header-anchor">#</a> Format</h2> <p>Here is the format of the <code>Dockerfile</code>:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment"># Comment</span>
+INSTRUCTION arguments
+</code></pre></div><p>The instruction is not case-sensitive. However, convention is for them to
+be UPPERCASE to distinguish them from arguments more easily.</p> <p>Docker runs instructions in a <code>Dockerfile</code> in order. A <code>Dockerfile</code> <strong>must
+begin with a `FROM` instruction</strong>. This may be after <a href="#parser-directives">parser
+directives</a>, <a href="#format">comments</a>, and globally scoped
+<a href="#arg">ARGs</a>. The <code>FROM</code> instruction specifies the <a href="/docs/docker/glossary.html#parent-image"><em>Parent
+Image</em></a> from which you are building. <code>FROM</code>
+may only be preceded by one or more <code>ARG</code> instructions, which declare arguments
+that are used in <code>FROM</code> lines in the <code>Dockerfile</code>.</p> <p>Docker treats lines that <em>begin</em> with <code>#</code> as a comment, unless the line is
+a valid <a href="#parser-directives">parser directive</a>. A <code>#</code> marker anywhere
+else in a line is treated as an argument. This allows statements like:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment"># Comment</span>
+<span class="token keyword">RUN</span> echo <span class="token string">'we are running some # of cool things'</span>
+</code></pre></div><p>Line continuation characters are not supported in comments.</p> <h2 id="parser-directives"><a href="#parser-directives" class="header-anchor">#</a> Parser directives</h2> <p>Parser directives are optional, and affect the way in which subsequent lines
+in a <code>Dockerfile</code> are handled. Parser directives do not add layers to the build,
+and will not be shown as a build step. Parser directives are written as a
+special type of comment in the form <code># directive=value</code>. A single directive
+may only be used once.</p> <p>Once a comment, empty line or builder instruction has been processed, Docker
+no longer looks for parser directives. Instead it treats anything formatted
+as a parser directive as a comment and does not attempt to validate if it might
+be a parser directive. Therefore, all parser directives must be at the very
+top of a <code>Dockerfile</code>.</p> <p>Parser directives are not case-sensitive. However, convention is for them to
+be lowercase. Convention is also to include a blank line following any
+parser directives. Line continuation characters are not supported in parser
+directives.</p> <p>Due to these rules, the following examples are all invalid:</p> <p>Invalid due to line continuation:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment"># direc \</span>
+tive=value
+</code></pre></div><p>Invalid due to appearing twice:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment"># directive=value1</span>
+<span class="token comment"># directive=value2</span>
+
+<span class="token keyword">FROM</span> ImageName
+</code></pre></div><p>Treated as a comment due to appearing after a builder instruction:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">FROM</span> ImageName
+<span class="token comment"># directive=value</span>
+</code></pre></div><p>Treated as a comment due to appearing after a comment which is not a parser
+directive:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment"># About my dockerfile</span>
+<span class="token comment"># directive=value</span>
+<span class="token keyword">FROM</span> ImageName
+</code></pre></div><p>The unknown directive is treated as a comment due to not being recognized. In
+addition, the known directive is treated as a comment due to appearing after
+a comment which is not a parser directive.</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment"># unknowndirective=value</span>
+<span class="token comment"># knowndirective=value</span>
+</code></pre></div><p>Non line-breaking whitespace is permitted in a parser directive. Hence, the
+following lines are all treated identically:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token comment">#directive=value</span>
+<span class="token comment"># directive =value</span>
+<span class="token comment">#	directive= value</span>
+<span class="token comment"># directive = value</span>
+<span class="token comment">#	  dIrEcTiVe=value</span>
+</code></pre></div><p>The following parser directives are supported:</p> <ul><li><code>syntax</code></li> <li><code>escape</code></li></ul> <h2 id="syntax"><a href="#syntax" class="header-anchor">#</a> syntax</h2> <div class="language- extra-class"><pre><code># syntax=[remote image reference]
+</code></pre></div><p>For example:</p> <div class="language- extra-class"><pre><code># syntax=docker/dockerfile
+# syntax=docker/dockerfile:1.0
+# syntax=docker.io/docker/dockerfile:1
+# syntax=docker/dockerfile:1.0.0-experimental
+# syntax=example.com/user/repo:tag@sha256:abcdef...
+</code></pre></div><p>This feature is only enabled if the <a href="#buildkit">BuildKit</a> backend is used.</p> <p>The syntax directive defines the location of the Dockerfile builder that is used for
+building the current Dockerfile. The BuildKit backend allows to seamlessly use
+external implementations of builders that are distributed as Docker images and
+execute inside a container sandbox environment.</p> <p>Custom Dockerfile implementation allows you to:</p> <ul><li>Automatically get bugfixes without updating the daemon</li> <li>Make sure all users are using the same implementation to build your Dockerfile</li> <li>Use the latest features without updating the daemon</li> <li>Try out new experimental or third-party features</li></ul> <h3 id="official-releases"><a href="#official-releases" class="header-anchor">#</a> Official releases</h3> <p>Docker distributes official versions of the images that can be used for building
+Dockerfiles under <code>docker/dockerfile</code> repository on Docker Hub. There are two
+channels where new images are released: stable and experimental.</p> <p>Stable channel follows semantic versioning. For example:</p> <ul><li>docker/dockerfile:1.0.0 - only allow immutable version 1.0.0</li> <li>docker/dockerfile:1.0 - allow versions 1.0.*</li> <li>docker/dockerfile:1 - allow versions 1.<em>.</em></li> <li>docker/dockerfile:latest - latest release on stable channel</li></ul> <p>The experimental channel uses incremental versioning with the major and minor
+component from the stable channel on the time of the release. For example:</p> <ul><li>docker/dockerfile:1.0.1-experimental - only allow immutable version 1.0.1-experimental</li> <li>docker/dockerfile:1.0-experimental - latest experimental releases after 1.0</li> <li>docker/dockerfile:experimental - latest release on experimental channel</li></ul> <p>You should choose a channel that best fits your needs. If you only want
+bugfixes, you should use <code>docker/dockerfile:1.0</code>. If you want to benefit from
+experimental features, you should use the experimental channel. If you are using
+the experimental channel, newer releases may not be backwards compatible, so it
+is recommended to use an immutable full version variant.</p> <p>For master builds and nightly feature releases refer to the description in <a href="https://github.com/moby/buildkit/blob/master/README.md" target="_blank" rel="noopener noreferrer">the source repository<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h2 id="escape"><a href="#escape" class="header-anchor">#</a> escape</h2> <div class="language- extra-class"><pre><code># escape=\ (backslash)
+</code></pre></div><p>Or</p> <div class="language- extra-class"><pre><code># escape=` (backtick)
+</code></pre></div><p>The <code>escape</code> directive sets the character used to escape characters in a
+<code>Dockerfile</code>. If not specified, the default escape character is <code>\</code>.</p> <p>The escape character is used both to escape characters in a line, and to
+escape a newline. This allows a <code>Dockerfile</code> instruction to
+span multiple lines. Note that regardless of whether the <code>escape</code> parser
+directive is included in a <code>Dockerfile</code>, <em>escaping is not performed in
+a <code>RUN</code> command, except at the end of a line.</em></p> <p>Setting the escape character to <code>`</code> is especially useful on
+<code>Windows</code>, where <code>\</code> is the directory path separator. <code>`</code> is consistent
+with <a href="https://technet.microsoft.com/en-us/library/hh847755.aspx" target="_blank" rel="noopener noreferrer">Windows PowerShell<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>Consider the following example which would fail in a non-obvious way on
+<code>Windows</code>. The second <code>\</code> at the end of the second line would be interpreted as an
+escape for the newline, instead of a target of the escape from the first <code>\</code>.
+Similarly, the <code>\</code> at the end of the third line would, assuming it was actually
+handled as an instruction, cause it be treated as a line continuation. The result
+of this dockerfile is that second and third lines are considered a single
+instruction:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">FROM</span> microsoft/nanoserver
+<span class="token keyword">COPY</span> testfile.txt c<span class="token punctuation">:</span>\\
+<span class="token keyword">RUN</span> dir c<span class="token punctuation">:</span>\
+</code></pre></div><p>Results in:</p> <div class="language- extra-class"><pre><code>PS C:\John&gt; docker build -t cmd .
+Sending build context to Docker daemon 3.072 kB
+Step 1/2 : FROM microsoft/nanoserver
+ ---&gt; 22738ff49c6d
+Step 2/2 : COPY testfile.txt c:\RUN dir c:
+GetFileAttributesEx c:RUN: The system cannot find the file specified.
+PS C:\John&gt;
+</code></pre></div><p>One solution to the above would be to use <code>/</code> as the target of both the <code>COPY</code>
+instruction, and <code>dir</code>. However, this syntax is, at best, confusing as it is not
+natural for paths on <code>Windows</code>, and at worst, error prone as not all commands on
+<code>Windows</code> support <code>/</code> as the path separator.</p> <p>By adding the <code>escape</code> parser directive, the following <code>Dockerfile</code> succeeds as
+expected with the use of natural platform semantics for file paths on <code>Windows</code>:</p> <div class="language- extra-class"><pre><code># escape=`
+
+FROM microsoft/nanoserver
+COPY testfile.txt c:\
+RUN dir c:\
+</code></pre></div><p>Results in:</p> <div class="language- extra-class"><pre><code>PS C:\John&gt; docker build -t succeeds --no-cache=true .
+Sending build context to Docker daemon 3.072 kB
+Step 1/3 : FROM microsoft/nanoserver
+ ---&gt; 22738ff49c6d
+Step 2/3 : COPY testfile.txt c:\
+ ---&gt; 96655de338de
+Removing intermediate container 4db9acbb1682
+Step 3/3 : RUN dir c:\
+ ---&gt; Running in a2c157f842f5
+ Volume in drive C has no label.
+ Volume Serial Number is 7E6D-E0F7
+
+ Directory of c:\
+
+10/05/2016  05:04 PM             1,894 License.txt
+10/05/2016  02:22 PM    &lt;DIR&gt;          Program Files
+10/05/2016  02:14 PM    &lt;DIR&gt;          Program Files (x86)
+10/28/2016  11:18 AM                62 testfile.txt
+10/28/2016  11:20 AM    &lt;DIR&gt;          Users
+10/28/2016  11:20 AM    &lt;DIR&gt;          Windows
+           2 File(s)          1,956 bytes
+           4 Dir(s)  21,259,096,064 bytes free
+ ---&gt; 01c7f3bef04f
+Removing intermediate container a2c157f842f5
+Successfully built 01c7f3bef04f
+PS C:\John&gt;
+</code></pre></div><h2 id="environment-replacement"><a href="#environment-replacement" class="header-anchor">#</a> Environment replacement</h2> <p>Environment variables (declared with <a href="#env">the <code>ENV</code> statement</a>) can also be
+used in certain instructions as variables to be interpreted by the
+<code>Dockerfile</code>. Escapes are also handled for including variable-like syntax
+into a statement literally.</p> <p>Environment variables are notated in the <code>Dockerfile</code> either with
+<code>$variable_name</code> or <code>${variable_name}</code>. They are treated equivalently and the
+brace syntax is typically used to address issues with variable names with no
+whitespace, like <code>${foo}_bar</code>.</p> <p>The <code>${variable_name}</code> syntax also supports a few of the standard <code>bash</code>
+modifiers as specified below:</p> <ul><li><code>${variable:-word}</code> indicates that if <code>variable</code> is set then the result
+will be that value. If <code>variable</code> is not set then <code>word</code> will be the result.</li> <li><code>${variable:+word}</code> indicates that if <code>variable</code> is set then <code>word</code> will be
+the result, otherwise the result is the empty string.</li></ul> <p>In all cases, <code>word</code> can be any string, including additional environment
+variables.</p> <p>Escaping is possible by adding a <code>\</code> before the variable: <code>\$foo</code> or <code>\${foo}</code>,
+for example, will translate to <code>$foo</code> and <code>${foo}</code> literals respectively.</p> <p>Example (parsed representation is displayed after the <code>#</code>):</p> <div class="language- extra-class"><pre><code>FROM busybox
+ENV foo /bar
+WORKDIR ${foo}   # WORKDIR /bar
+ADD . $foo       # ADD . /bar
+COPY \$foo /quux # COPY $foo /quux
+</code></pre></div><p>Environment variables are supported by the following list of instructions in
+the <code>Dockerfile</code>:</p> <ul><li><code>ADD</code></li> <li><code>COPY</code></li> <li><code>ENV</code></li> <li><code>EXPOSE</code></li> <li><code>FROM</code></li> <li><code>LABEL</code></li> <li><code>STOPSIGNAL</code></li> <li><code>USER</code></li> <li><code>VOLUME</code></li> <li><code>WORKDIR</code></li></ul> <p>as well as:</p> <ul><li><code>ONBUILD</code> (when combined with one of the supported instructions above)</li></ul> <blockquote><p><strong>Note</strong>:
+prior to 1.4, <code>ONBUILD</code> instructions did <strong>NOT</strong> support environment
+variable, even when combined with any of the instructions listed above.</p></blockquote> <p>Environment variable substitution will use the same value for each variable
+throughout the entire instruction. In other words, in this example:</p> <div class="language- extra-class"><pre><code>ENV abc=hello
+ENV abc=bye def=$abc
+ENV ghi=$abc
+</code></pre></div><p>will result in <code>def</code> having a value of <code>hello</code>, not <code>bye</code>. However,
+<code>ghi</code> will have a value of <code>bye</code> because it is not part of the same instruction
+that set <code>abc</code> to <code>bye</code>.</p> <h2 id="dockerignore-file"><a href="#dockerignore-file" class="header-anchor">#</a> .dockerignore file</h2> <p>Before the docker CLI sends the context to the docker daemon, it looks
+for a file named <code>.dockerignore</code> in the root directory of the context.
+If this file exists, the CLI modifies the context to exclude files and
+directories that match patterns in it.  This helps to avoid
+unnecessarily sending large or sensitive files and directories to the
+daemon and potentially adding them to images using <code>ADD</code> or <code>COPY</code>.</p> <p>The CLI interprets the <code>.dockerignore</code> file as a newline-separated
+list of patterns similar to the file globs of Unix shells.  For the
+purposes of matching, the root of the context is considered to be both
+the working and the root directory.  For example, the patterns
+<code>/foo/bar</code> and <code>foo/bar</code> both exclude a file or directory named <code>bar</code>
+in the <code>foo</code> subdirectory of <code>PATH</code> or in the root of the git
+repository located at <code>URL</code>.  Neither excludes anything else.</p> <p>If a line in <code>.dockerignore</code> file starts with <code>#</code> in column 1, then this line is
+considered as a comment and is ignored before interpreted by the CLI.</p> <p>Here is an example <code>.dockerignore</code> file:</p> <div class="language- extra-class"><pre class="language-text"><code># comment
+*/temp*
+*/*/temp*
+temp?
+</code></pre></div><p>This file causes the following build behavior:</p> <table><thead><tr><th style="text-align:left;">Rule</th> <th style="text-align:left;">Behavior</th></tr></thead> <tbody><tr><td style="text-align:left;"><code># comment</code></td> <td style="text-align:left;">Ignored.</td></tr> <tr><td style="text-align:left;"><code>*/temp*</code></td> <td style="text-align:left;">Exclude files and directories whose names start with <code>temp</code> in any immediate subdirectory of the root.  For example, the plain file <code>/somedir/temporary.txt</code> is excluded, as is the directory <code>/somedir/temp</code>.</td></tr> <tr><td style="text-align:left;"><code>*/*/temp*</code></td> <td style="text-align:left;">Exclude files and directories starting with <code>temp</code> from any subdirectory that is two levels below the root. For example, <code>/somedir/subdir/temporary.txt</code> is excluded.</td></tr> <tr><td style="text-align:left;"><code>temp?</code></td> <td style="text-align:left;">Exclude files and directories in the root directory whose names are a one-character extension of <code>temp</code>.  For example, <code>/tempa</code> and <code>/tempb</code> are excluded.</td></tr></tbody></table> <p>Matching is done using Go's
+<a href="http://golang.org/pkg/path/filepath#Match" target="_blank" rel="noopener noreferrer">filepath.Match<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> rules.  A
+preprocessing step removes leading and trailing whitespace and
+eliminates <code>.</code> and <code>..</code> elements using Go's
+<a href="http://golang.org/pkg/path/filepath/#Clean" target="_blank" rel="noopener noreferrer">filepath.Clean<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.  Lines
+that are blank after preprocessing are ignored.</p> <p>Beyond Go's filepath.Match rules, Docker also supports a special
+wildcard string <code>**</code> that matches any number of directories (including
+zero). For example, <code>**/*.go</code> will exclude all files that end with <code>.go</code>
+that are found in all directories, including the root of the build context.</p> <p>Lines starting with <code>!</code> (exclamation mark) can be used to make exceptions
+to exclusions.  The following is an example <code>.dockerignore</code> file that
+uses this mechanism:</p> <div class="language- extra-class"><pre class="language-text"><code>    *.md
+    !README.md
+</code></pre></div><p>All markdown files <em>except</em> <code>README.md</code> are excluded from the context.</p> <p>The placement of <code>!</code> exception rules influences the behavior: the last
+line of the <code>.dockerignore</code> that matches a particular file determines
+whether it is included or excluded.  Consider the following example:</p> <div class="language- extra-class"><pre class="language-text"><code>    *.md
+    !README*.md
+    README-secret.md
+</code></pre></div><p>No markdown files are included in the context except README files other than
+<code>README-secret.md</code>.</p> <p>Now consider this example:</p> <div class="language- extra-class"><pre class="language-text"><code>    *.md
+    README-secret.md
+    !README*.md
+</code></pre></div><p>All of the README files are included.  The middle line has no effect because
+<code>!README*.md</code> matches <code>README-secret.md</code> and comes last.</p> <p>You can even use the <code>.dockerignore</code> file to exclude the <code>Dockerfile</code>
+and <code>.dockerignore</code> files.  These files are still sent to the daemon
+because it needs them to do its job.  But the <code>ADD</code> and <code>COPY</code> instructions
+do not copy them to the image.</p> <p>Finally, you may want to specify which files to include in the
+context, rather than which to exclude. To achieve this, specify <code>*</code> as
+the first pattern, followed by one or more <code>!</code> exception patterns.</p> <p><strong>Note</strong>: For historical reasons, the pattern <code>.</code> is ignored.</p> <h2 id="from"><a href="#from" class="header-anchor">#</a> FROM</h2> <div class="language- extra-class"><pre><code>FROM &lt;image&gt; [AS &lt;name&gt;]
+</code></pre></div><p>Or</p> <div class="language- extra-class"><pre><code>FROM &lt;image&gt;[:&lt;tag&gt;] [AS &lt;name&gt;]
+</code></pre></div><p>Or</p> <div class="language- extra-class"><pre><code>FROM &lt;image&gt;[@&lt;digest&gt;] [AS &lt;name&gt;]
+</code></pre></div><p>The <code>FROM</code> instruction initializes a new build stage and sets the
+<a href="/docs/docker/glossary.html#base-image"><em>Base Image</em></a> for subsequent instructions. As such, a
+valid <code>Dockerfile</code> must start with a <code>FROM</code> instruction. The image can be
+any valid image – it is especially easy to start by <strong>pulling an image</strong> from
+the <a href="https://docs.docker.com/engine/tutorials/dockerrepos/" target="_blank" rel="noopener noreferrer"><em>Public Repositories</em><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <ul><li><p><code>ARG</code> is the only instruction that may precede <code>FROM</code> in the <code>Dockerfile</code>.
+See <a href="#understand-how-arg-and-from-interact">Understand how ARG and FROM interact</a>.</p></li> <li><p><code>FROM</code> can appear multiple times within a single <code>Dockerfile</code> to
+create multiple images or use one build stage as a dependency for another.
+Simply make a note of the last image ID output by the commit before each new
+<code>FROM</code> instruction. Each <code>FROM</code> instruction clears any state created by previous
+instructions.</p></li> <li><p>Optionally a name can be given to a new build stage by adding <code>AS name</code> to the
+<code>FROM</code> instruction. The name can be used in subsequent <code>FROM</code> and
+<code>COPY --from=&lt;name|index&gt;</code> instructions to refer to the image built in this stage.</p></li> <li><p>The <code>tag</code> or <code>digest</code> values are optional. If you omit either of them, the
+builder assumes a <code>latest</code> tag by default. The builder returns an error if it
+cannot find the <code>tag</code> value.</p></li></ul> <h3 id="understand-how-arg-and-from-interact"><a href="#understand-how-arg-and-from-interact" class="header-anchor">#</a> Understand how ARG and FROM interact</h3> <p><code>FROM</code> instructions support variables that are declared by any <code>ARG</code>
+instructions that occur before the first <code>FROM</code>.</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">ARG</span>  CODE_VERSION=latest
+<span class="token keyword">FROM</span> base<span class="token punctuation">:</span>$<span class="token punctuation">{</span>CODE_VERSION<span class="token punctuation">}</span>
+<span class="token keyword">CMD</span>  /code/run<span class="token punctuation">-</span>app
+
+<span class="token keyword">FROM</span> extras<span class="token punctuation">:</span>$<span class="token punctuation">{</span>CODE_VERSION<span class="token punctuation">}</span>
+<span class="token keyword">CMD</span>  /code/run<span class="token punctuation">-</span>extras
+</code></pre></div><p>An <code>ARG</code> declared before a <code>FROM</code> is outside of a build stage, so it
+can't be used in any instruction after a <code>FROM</code>. To use the default value of
+an <code>ARG</code> declared before the first <code>FROM</code> use an <code>ARG</code> instruction without
+a value inside of a build stage:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">ARG</span> VERSION=latest
+<span class="token keyword">FROM</span> busybox<span class="token punctuation">:</span>$VERSION
+<span class="token keyword">ARG</span> VERSION
+<span class="token keyword">RUN</span> echo $VERSION <span class="token punctuation">&gt;</span> image_version
+</code></pre></div><h2 id="run"><a href="#run" class="header-anchor">#</a> RUN</h2> <p>RUN has 2 forms:</p> <ul><li><code>RUN &lt;command&gt;</code> (<em>shell</em> form, the command is run in a shell, which by
+default is <code>/bin/sh -c</code> on Linux or <code>cmd /S /C</code> on Windows)</li> <li><code>RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code> (<em>exec</em> form)</li></ul> <p>The <code>RUN</code> instruction will execute any commands in a new layer on top of the
+current image and commit the results. The resulting committed image will be
+used for the next step in the <code>Dockerfile</code>.</p> <p>Layering <code>RUN</code> instructions and generating commits conforms to the core
+concepts of Docker where commits are cheap and containers can be created from
+any point in an image's history, much like source control.</p> <p>The <em>exec</em> form makes it possible to avoid shell string munging, and to <code>RUN</code>
+commands using a base image that does not contain the specified shell executable.</p> <p>The default shell for the <em>shell</em> form can be changed using the <code>SHELL</code>
+command.</p> <p>In the <em>shell</em> form you can use a <code>\</code> (backslash) to continue a single
+RUN instruction onto the next line. For example, consider these two lines:</p> <div class="language- extra-class"><pre class="language-text"><code>RUN /bin/bash -c 'source $HOME/.bashrc; \
+echo $HOME'
+</code></pre></div><p>Together they are equivalent to this single line:</p> <div class="language- extra-class"><pre class="language-text"><code>RUN /bin/bash -c 'source $HOME/.bashrc; echo $HOME'
+</code></pre></div><blockquote><p><strong>Note</strong>:
+To use a different shell, other than '/bin/sh', use the <em>exec</em> form
+passing in the desired shell. For example,
+<code>RUN [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;echo hello&quot;]</code></p></blockquote> <blockquote><p><strong>Note</strong>:
+The <em>exec</em> form is parsed as a JSON array, which means that
+you must use double-quotes (&quot;) around words not single-quotes (').</p></blockquote> <blockquote><p><strong>Note</strong>:
+Unlike the <em>shell</em> form, the <em>exec</em> form does not invoke a command shell.
+This means that normal shell processing does not happen. For example,
+<code>RUN [ &quot;echo&quot;, &quot;$HOME&quot; ]</code> will not do variable substitution on <code>$HOME</code>.
+If you want shell processing then either use the <em>shell</em> form or execute
+a shell directly, for example: <code>RUN [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]</code>.
+When using the exec form and executing a shell directly, as in the case for
+the shell form, it is the shell that is doing the environment variable
+expansion, not docker.</p> <p><strong>Note</strong>:
+In the <em>JSON</em> form, it is necessary to escape backslashes. This is
+particularly relevant on Windows where the backslash is the path separator.
+The following line would otherwise be treated as <em>shell</em> form due to not
+being valid JSON, and fail in an unexpected way:
+<code>RUN [&quot;c:\windows\system32\tasklist.exe&quot;]</code>
+The correct syntax for this example is:
+<code>RUN [&quot;c:\\windows\\system32\\tasklist.exe&quot;]</code></p></blockquote> <p>The cache for <code>RUN</code> instructions isn't invalidated automatically during
+the next build. The cache for an instruction like
+<code>RUN apt-get dist-upgrade -y</code> will be reused during the next build. The
+cache for <code>RUN</code> instructions can be invalidated by using the <code>--no-cache</code>
+flag, for example <code>docker build --no-cache</code>.</p> <p>See the <a href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#/build-cache" target="_blank" rel="noopener noreferrer"><code>Dockerfile</code> Best Practices
+guide<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> for more information.</p> <p>The cache for <code>RUN</code> instructions can be invalidated by <code>ADD</code> instructions. See
+<a href="#add">below</a> for details.</p> <h3 id="known-issues-run"><a href="#known-issues-run" class="header-anchor">#</a> Known issues (RUN)</h3> <ul><li><p><a href="https://github.com/docker/docker/issues/783" target="_blank" rel="noopener noreferrer">Issue 783<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> is about file
+permissions problems that can occur when using the AUFS file system. You
+might notice it during an attempt to <code>rm</code> a file, for example.</p> <p>For systems that have recent aufs version (i.e., <code>dirperm1</code> mount option can
+be set), docker will attempt to fix the issue automatically by mounting
+the layers with <code>dirperm1</code> option. More details on <code>dirperm1</code> option can be
+found at <a href="https://github.com/sfjro/aufs3-linux/tree/aufs3.18/Documentation/filesystems/aufs" target="_blank" rel="noopener noreferrer"><code>aufs</code> man page<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>If your system doesn't have support for <code>dirperm1</code>, the issue describes a workaround.</p></li></ul> <h2 id="cmd"><a href="#cmd" class="header-anchor">#</a> CMD</h2> <p>The <code>CMD</code> instruction has three forms:</p> <ul><li><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]</code> (<em>exec</em> form, this is the preferred form)</li> <li><code>CMD [&quot;param1&quot;,&quot;param2&quot;]</code> (as <em>default parameters to ENTRYPOINT</em>)</li> <li><code>CMD command param1 param2</code> (<em>shell</em> form)</li></ul> <p>There can only be one <code>CMD</code> instruction in a <code>Dockerfile</code>. If you list more than one <code>CMD</code>
+then only the last <code>CMD</code> will take effect.</p> <p><strong>The main purpose of a <code>CMD</code> is to provide defaults for an executing
+container.</strong> These defaults can include an executable, or they can omit
+the executable, in which case you must specify an <code>ENTRYPOINT</code>
+instruction as well.</p> <blockquote><p><strong>Note</strong>:
+If <code>CMD</code> is used to provide default arguments for the <code>ENTRYPOINT</code>
+instruction, both the <code>CMD</code> and <code>ENTRYPOINT</code> instructions should be specified
+with the JSON array format.</p></blockquote> <blockquote><p><strong>Note</strong>:
+The <em>exec</em> form is parsed as a JSON array, which means that
+you must use double-quotes (&quot;) around words not single-quotes (').</p></blockquote> <blockquote><p><strong>Note</strong>:
+Unlike the <em>shell</em> form, the <em>exec</em> form does not invoke a command shell.
+This means that normal shell processing does not happen. For example,
+<code>CMD [ &quot;echo&quot;, &quot;$HOME&quot; ]</code> will not do variable substitution on <code>$HOME</code>.
+If you want shell processing then either use the <em>shell</em> form or execute
+a shell directly, for example: <code>CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]</code>.
+When using the exec form and executing a shell directly, as in the case for
+the shell form, it is the shell that is doing the environment variable
+expansion, not docker.</p></blockquote> <p>When used in the shell or exec formats, the <code>CMD</code> instruction sets the command
+to be executed when running the image.</p> <p>If you use the <em>shell</em> form of the <code>CMD</code>, then the <code>&lt;command&gt;</code> will execute in
+<code>/bin/sh -c</code>:</p> <div class="language- extra-class"><pre><code>FROM ubuntu
+CMD echo &quot;This is a test.&quot; | wc -
+</code></pre></div><p>If you want to <strong>run your</strong> <code>&lt;command&gt;</code> <strong>without a shell</strong> then you must
+express the command as a JSON array and give the full path to the executable.
+<strong>This array form is the preferred format of <code>CMD</code>.</strong> Any additional parameters
+must be individually expressed as strings in the array:</p> <div class="language- extra-class"><pre><code>FROM ubuntu
+CMD [&quot;/usr/bin/wc&quot;,&quot;--help&quot;]
+</code></pre></div><p>If you would like your container to run the same executable every time, then
+you should consider using <code>ENTRYPOINT</code> in combination with <code>CMD</code>. See
+<a href="#entrypoint"><em>ENTRYPOINT</em></a>.</p> <p>If the user specifies arguments to <code>docker run</code> then they will override the
+default specified in <code>CMD</code>.</p> <blockquote><p><strong>Note</strong>:
+Don't confuse <code>RUN</code> with <code>CMD</code>. <code>RUN</code> actually runs a command and commits
+the result; <code>CMD</code> does not execute anything at build time, but specifies
+the intended command for the image.</p></blockquote> <h2 id="label"><a href="#label" class="header-anchor">#</a> LABEL</h2> <div class="language- extra-class"><pre><code>LABEL &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; ...
+</code></pre></div><p>The <code>LABEL</code> instruction adds metadata to an image. A <code>LABEL</code> is a
+key-value pair. To include spaces within a <code>LABEL</code> value, use quotes and
+backslashes as you would in command-line parsing. A few usage examples:</p> <div class="language- extra-class"><pre><code>LABEL &quot;com.example.vendor&quot;=&quot;ACME Incorporated&quot;
+LABEL com.example.label-with-value=&quot;foo&quot;
+LABEL version=&quot;1.0&quot;
+LABEL description=&quot;This text illustrates \
+that label-values can span multiple lines.&quot;
+</code></pre></div><p>An image can have more than one label. You can specify multiple labels on a
+single line. Prior to Docker 1.10, this decreased the size of the final image,
+but this is no longer the case. You may still choose to specify multiple labels
+in a single instruction, in one of the following two ways:</p> <div class="language-none extra-class"><pre class="language-text"><code>LABEL multi.label1=&quot;value1&quot; multi.label2=&quot;value2&quot; other=&quot;value3&quot;
+</code></pre></div><div class="language-none extra-class"><pre class="language-text"><code>LABEL multi.label1=&quot;value1&quot; \
+      multi.label2=&quot;value2&quot; \
+      other=&quot;value3&quot;
+</code></pre></div><p>Labels included in base or parent images (images in the <code>FROM</code> line) are
+inherited by your image. If a label already exists but with a different value,
+the most-recently-applied value overrides any previously-set value.</p> <p>To view an image's labels, use the <code>docker inspect</code> command.</p> <div class="language- extra-class"><pre><code>&quot;Labels&quot;: {
+    &quot;com.example.vendor&quot;: &quot;ACME Incorporated&quot;
+    &quot;com.example.label-with-value&quot;: &quot;foo&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;description&quot;: &quot;This text illustrates that label-values can span multiple lines.&quot;,
+    &quot;multi.label1&quot;: &quot;value1&quot;,
+    &quot;multi.label2&quot;: &quot;value2&quot;,
+    &quot;other&quot;: &quot;value3&quot;
+},
+</code></pre></div><h2 id="maintainer-deprecated"><a href="#maintainer-deprecated" class="header-anchor">#</a> MAINTAINER (deprecated)</h2> <div class="language- extra-class"><pre><code>MAINTAINER &lt;name&gt;
+</code></pre></div><p>The <code>MAINTAINER</code> instruction sets the <em>Author</em> field of the generated images.
+The <code>LABEL</code> instruction is a much more flexible version of this and you should use
+it instead, as it enables setting any metadata you require, and can be viewed
+easily, for example with <code>docker inspect</code>. To set a label corresponding to the
+<code>MAINTAINER</code> field you could use:</p> <div class="language- extra-class"><pre><code>LABEL maintainer=&quot;SvenDowideit@home.org.au&quot;
+</code></pre></div><p>This will then be visible from <code>docker inspect</code> with the other labels.</p> <h2 id="expose"><a href="#expose" class="header-anchor">#</a> EXPOSE</h2> <div class="language- extra-class"><pre><code>EXPOSE &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]
+</code></pre></div><p>The <code>EXPOSE</code> instruction informs Docker that the container listens on the
+specified network ports at runtime. You can specify whether the port listens on
+TCP or UDP, and the default is TCP if the protocol is not specified.</p> <p>The <code>EXPOSE</code> instruction does not actually publish the port. It functions as a
+type of documentation between the person who builds the image and the person who
+runs the container, about which ports are intended to be published. To actually
+publish the port when running the container, use the <code>-p</code> flag on <code>docker run</code>
+to publish and map one or more ports, or the <code>-P</code> flag to publish all exposed
+ports and map them to high-order ports.</p> <p>By default, <code>EXPOSE</code> assumes TCP. You can also specify UDP:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">EXPOSE</span> 80/udp
+</code></pre></div><p>To expose on both TCP and UDP, include two lines:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">EXPOSE</span> 80/tcp
+<span class="token keyword">EXPOSE</span> 80/udp
+</code></pre></div><p>In this case, if you use <code>-P</code> with <code>docker run</code>, the port will be exposed once
+for TCP and once for UDP. Remember that <code>-P</code> uses an ephemeral high-ordered host
+port on the host, so the port will not be the same for TCP and UDP.</p> <p>Regardless of the <code>EXPOSE</code> settings, you can override them at runtime by using
+the <code>-p</code> flag. For example</p> <div class="language-bash extra-class"><pre class="language-bash"><code>docker run -p <span class="token number">80</span>:80/tcp -p <span class="token number">80</span>:80/udp <span class="token punctuation">..</span>.
+</code></pre></div><p>To set up port redirection on the host system, see <a href="/docs/docker/run.html#expose-incoming-ports">using the -P
+flag</a>. The <code>docker network</code> command supports
+creating networks for communication among containers without the need to
+expose or publish specific ports, because the containers connected to the
+network can communicate with each other over any port. For detailed information,
+see the
+<a href="https://docs.docker.com/engine/userguide/networking/" target="_blank" rel="noopener noreferrer">overview of this feature<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>).</p> <h2 id="env"><a href="#env" class="header-anchor">#</a> ENV</h2> <div class="language- extra-class"><pre><code>ENV &lt;key&gt; &lt;value&gt;
+ENV &lt;key&gt;=&lt;value&gt; ...
+</code></pre></div><p>The <code>ENV</code> instruction sets the environment variable <code>&lt;key&gt;</code> to the value
+<code>&lt;value&gt;</code>. This value will be in the environment for all subsequent instructions
+in the build stage and can be <a href="#environment-replacement">replaced inline</a> in
+many as well.</p> <p>The <code>ENV</code> instruction has two forms. The first form, <code>ENV &lt;key&gt; &lt;value&gt;</code>,
+will set a single variable to a value. The entire string after the first
+space will be treated as the <code>&lt;value&gt;</code> - including whitespace characters. The
+value will be interpreted for other environment variables, so quote characters
+will be removed if they are not escaped.</p> <p>The second form, <code>ENV &lt;key&gt;=&lt;value&gt; ...</code>, allows for multiple variables to
+be set at one time. Notice that the second form uses the equals sign (=)
+in the syntax, while the first form does not. Like command line parsing,
+quotes and backslashes can be used to include spaces within values.</p> <p>For example:</p> <div class="language- extra-class"><pre><code>ENV myName=&quot;John Doe&quot; myDog=Rex\ The\ Dog \
+    myCat=fluffy
+</code></pre></div><p>and</p> <div class="language- extra-class"><pre><code>ENV myName John Doe
+ENV myDog Rex The Dog
+ENV myCat fluffy
+</code></pre></div><p>will yield the same net results in the final image.</p> <p>The environment variables set using <code>ENV</code> will persist when a container is run
+from the resulting image. You can view the values using <code>docker inspect</code>, and
+change them using <code>docker run --env &lt;key&gt;=&lt;value&gt;</code>.</p> <blockquote><p><strong>Note</strong>:
+Environment persistence can cause unexpected side effects. For example,
+setting <code>ENV DEBIAN_FRONTEND noninteractive</code> may confuse apt-get
+users on a Debian-based image. To set a value for a single command, use
+<code>RUN &lt;key&gt;=&lt;value&gt; &lt;command&gt;</code>.</p></blockquote> <h2 id="add"><a href="#add" class="header-anchor">#</a> ADD</h2> <p>ADD has two forms:</p> <ul><li><code>ADD [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</code></li> <li><code>ADD [--chown=&lt;user&gt;:&lt;group&gt;] [&quot;&lt;src&gt;&quot;,... &quot;&lt;dest&gt;&quot;]</code> (this form is required for paths containing
+whitespace)</li></ul> <blockquote><p><strong>Note</strong>:
+The <code>--chown</code> feature is only supported on Dockerfiles used to build Linux containers,
+and will not work on Windows containers. Since user and group ownership concepts do
+not translate between Linux and Windows, the use of <code>/etc/passwd</code> and <code>/etc/group</code> for
+translating user and group names to IDs restricts this feature to only be viable
+for Linux OS-based containers.</p></blockquote> <p>The <code>ADD</code> instruction copies new files, directories or remote file URLs from <code>&lt;src&gt;</code>
+and adds them to the filesystem of the image at the path <code>&lt;dest&gt;</code>.</p> <p>Multiple <code>&lt;src&gt;</code> resources may be specified but if they are files or
+directories, their paths are interpreted as relative to the source of
+the context of the build.</p> <p>Each <code>&lt;src&gt;</code> may contain wildcards and matching will be done using Go's
+<a href="http://golang.org/pkg/path/filepath#Match" target="_blank" rel="noopener noreferrer">filepath.Match<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> rules. For example:</p> <div class="language- extra-class"><pre><code>ADD hom* /mydir/        # adds all files starting with &quot;hom&quot;
+ADD hom?.txt /mydir/    # ? is replaced with any single character, e.g., &quot;home.txt&quot;
+</code></pre></div><p>The <code>&lt;dest&gt;</code> is an absolute path, or a path relative to <code>WORKDIR</code>, into which
+the source will be copied inside the destination container.</p> <div class="language- extra-class"><pre><code>ADD test relativeDir/          # adds &quot;test&quot; to `WORKDIR`/relativeDir/
+ADD test /absoluteDir/         # adds &quot;test&quot; to /absoluteDir/
+</code></pre></div><p>When adding files or directories that contain special characters (such as <code>[</code>
+and <code>]</code>), you need to escape those paths following the Golang rules to prevent
+them from being treated as a matching pattern. For example, to add a file
+named <code>arr[0].txt</code>, use the following;</p> <div class="language- extra-class"><pre><code>ADD arr[[]0].txt /mydir/    # copy a file named &quot;arr[0].txt&quot; to /mydir/
+</code></pre></div><p>All new files and directories are created with a UID and GID of 0, unless the
+optional <code>--chown</code> flag specifies a given username, groupname, or UID/GID
+combination to request specific ownership of the content added. The
+format of the <code>--chown</code> flag allows for either username and groupname strings
+or direct integer UID and GID in any combination. Providing a username without
+groupname or a UID without GID will use the same numeric UID as the GID. If a
+username or groupname is provided, the container's root filesystem
+<code>/etc/passwd</code> and <code>/etc/group</code> files will be used to perform the translation
+from name to integer UID or GID respectively. The following examples show
+valid definitions for the <code>--chown</code> flag:</p> <div class="language- extra-class"><pre><code>ADD --chown=55:mygroup files* /somedir/
+ADD --chown=bin files* /somedir/
+ADD --chown=1 files* /somedir/
+ADD --chown=10:11 files* /somedir/
+</code></pre></div><p>If the container root filesystem does not contain either <code>/etc/passwd</code> or
+<code>/etc/group</code> files and either user or group names are used in the <code>--chown</code>
+flag, the build will fail on the <code>ADD</code> operation. Using numeric IDs requires
+no lookup and will not depend on container root filesystem content.</p> <p>In the case where <code>&lt;src&gt;</code> is a remote file URL, the destination will
+have permissions of 600. If the remote file being retrieved has an HTTP
+<code>Last-Modified</code> header, the timestamp from that header will be used
+to set the <code>mtime</code> on the destination file. However, like any other file
+processed during an <code>ADD</code>, <code>mtime</code> will not be included in the determination
+of whether or not the file has changed and the cache should be updated.</p> <blockquote><p><strong>Note</strong>:
+If you build by passing a <code>Dockerfile</code> through STDIN (<code>docker build - &lt; somefile</code>), there is no build context, so the <code>Dockerfile</code>
+can only contain a URL based <code>ADD</code> instruction. You can also pass a
+compressed archive through STDIN: (<code>docker build - &lt; archive.tar.gz</code>),
+the <code>Dockerfile</code> at the root of the archive and the rest of the
+archive will be used as the context of the build.</p></blockquote> <blockquote><p><strong>Note</strong>:
+If your URL files are protected using authentication, you
+will need to use <code>RUN wget</code>, <code>RUN curl</code> or use another tool from
+within the container as the <code>ADD</code> instruction does not support
+authentication.</p></blockquote> <blockquote><p><strong>Note</strong>:
+The first encountered <code>ADD</code> instruction will invalidate the cache for all
+following instructions from the Dockerfile if the contents of <code>&lt;src&gt;</code> have
+changed. This includes invalidating the cache for <code>RUN</code> instructions.
+See the <a href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#/build-cache" target="_blank" rel="noopener noreferrer"><code>Dockerfile</code> Best Practices
+guide<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> for more information.</p></blockquote> <p><code>ADD</code> obeys the following rules:</p> <ul><li><p>The <code>&lt;src&gt;</code> path must be inside the <em>context</em> of the build;
+you cannot <code>ADD ../something /something</code>, because the first step of a
+<code>docker build</code> is to send the context directory (and subdirectories) to the
+docker daemon.</p></li> <li><p>If <code>&lt;src&gt;</code> is a URL and <code>&lt;dest&gt;</code> does not end with a trailing slash, then a
+file is downloaded from the URL and copied to <code>&lt;dest&gt;</code>.</p></li> <li><p>If <code>&lt;src&gt;</code> is a URL and <code>&lt;dest&gt;</code> does end with a trailing slash, then the
+filename is inferred from the URL and the file is downloaded to
+<code>&lt;dest&gt;/&lt;filename&gt;</code>. For instance, <code>ADD http://example.com/foobar /</code> would
+create the file <code>/foobar</code>. The URL must have a nontrivial path so that an
+appropriate filename can be discovered in this case (<code>http://example.com</code>
+will not work).</p></li> <li><p>If <code>&lt;src&gt;</code> is a directory, the entire contents of the directory are copied,
+including filesystem metadata.</p></li></ul> <blockquote><p><strong>Note</strong>:
+The directory itself is not copied, just its contents.</p></blockquote> <ul><li><p>If <code>&lt;src&gt;</code> is a <em>local</em> tar archive in a recognized compression format
+(identity, gzip, bzip2 or xz) then it is unpacked as a directory. Resources
+from <em>remote</em> URLs are <strong>not</strong> decompressed. When a directory is copied or
+unpacked, it has the same behavior as <code>tar -x</code>, the result is the union of:</p> <ol><li>Whatever existed at the destination path and</li> <li>The contents of the source tree, with conflicts resolved in favor
+of &quot;2.&quot; on a file-by-file basis.</li></ol> <blockquote><p><strong>Note</strong>:
+Whether a file is identified as a recognized compression format or not
+is done solely based on the contents of the file, not the name of the file.
+For example, if an empty file happens to end with <code>.tar.gz</code> this will not
+be recognized as a compressed file and <strong>will not</strong> generate any kind of
+decompression error message, rather the file will simply be copied to the
+destination.</p></blockquote></li> <li><p>If <code>&lt;src&gt;</code> is any other kind of file, it is copied individually along with
+its metadata. In this case, if <code>&lt;dest&gt;</code> ends with a trailing slash <code>/</code>, it
+will be considered a directory and the contents of <code>&lt;src&gt;</code> will be written
+at <code>&lt;dest&gt;/base(&lt;src&gt;)</code>.</p></li> <li><p>If multiple <code>&lt;src&gt;</code> resources are specified, either directly or due to the
+use of a wildcard, then <code>&lt;dest&gt;</code> must be a directory, and it must end with
+a slash <code>/</code>.</p></li> <li><p>If <code>&lt;dest&gt;</code> does not end with a trailing slash, it will be considered a
+regular file and the contents of <code>&lt;src&gt;</code> will be written at <code>&lt;dest&gt;</code>.</p></li> <li><p>If <code>&lt;dest&gt;</code> doesn't exist, it is created along with all missing directories
+in its path.</p></li></ul> <h2 id="copy"><a href="#copy" class="header-anchor">#</a> COPY</h2> <p>COPY has two forms:</p> <ul><li><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</code></li> <li><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] [&quot;&lt;src&gt;&quot;,... &quot;&lt;dest&gt;&quot;]</code> (this form is required for paths containing
+whitespace)</li></ul> <blockquote><p><strong>Note</strong>:
+The <code>--chown</code> feature is only supported on Dockerfiles used to build Linux containers,
+and will not work on Windows containers. Since user and group ownership concepts do
+not translate between Linux and Windows, the use of <code>/etc/passwd</code> and <code>/etc/group</code> for
+translating user and group names to IDs restricts this feature to only be viable for
+Linux OS-based containers.</p></blockquote> <p>The <code>COPY</code> instruction copies new files or directories from <code>&lt;src&gt;</code>
+and adds them to the filesystem of the container at the path <code>&lt;dest&gt;</code>.</p> <p>Multiple <code>&lt;src&gt;</code> resources may be specified but the paths of files and
+directories will be interpreted as relative to the source of the context
+of the build.</p> <p>Each <code>&lt;src&gt;</code> may contain wildcards and matching will be done using Go's
+<a href="http://golang.org/pkg/path/filepath#Match" target="_blank" rel="noopener noreferrer">filepath.Match<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> rules. For example:</p> <div class="language- extra-class"><pre><code>COPY hom* /mydir/        # adds all files starting with &quot;hom&quot;
+COPY hom?.txt /mydir/    # ? is replaced with any single character, e.g., &quot;home.txt&quot;
+</code></pre></div><p>The <code>&lt;dest&gt;</code> is an absolute path, or a path relative to <code>WORKDIR</code>, into which
+the source will be copied inside the destination container.</p> <div class="language- extra-class"><pre><code>COPY test relativeDir/   # adds &quot;test&quot; to `WORKDIR`/relativeDir/
+COPY test /absoluteDir/  # adds &quot;test&quot; to /absoluteDir/
+</code></pre></div><p>When copying files or directories that contain special characters (such as <code>[</code>
+and <code>]</code>), you need to escape those paths following the Golang rules to prevent
+them from being treated as a matching pattern. For example, to copy a file
+named <code>arr[0].txt</code>, use the following;</p> <div class="language- extra-class"><pre><code>COPY arr[[]0].txt /mydir/    # copy a file named &quot;arr[0].txt&quot; to /mydir/
+</code></pre></div><p>All new files and directories are created with a UID and GID of 0, unless the
+optional <code>--chown</code> flag specifies a given username, groupname, or UID/GID
+combination to request specific ownership of the copied content. The
+format of the <code>--chown</code> flag allows for either username and groupname strings
+or direct integer UID and GID in any combination. Providing a username without
+groupname or a UID without GID will use the same numeric UID as the GID. If a
+username or groupname is provided, the container's root filesystem
+<code>/etc/passwd</code> and <code>/etc/group</code> files will be used to perform the translation
+from name to integer UID or GID respectively. The following examples show
+valid definitions for the <code>--chown</code> flag:</p> <div class="language- extra-class"><pre><code>COPY --chown=55:mygroup files* /somedir/
+COPY --chown=bin files* /somedir/
+COPY --chown=1 files* /somedir/
+COPY --chown=10:11 files* /somedir/
+</code></pre></div><p>If the container root filesystem does not contain either <code>/etc/passwd</code> or
+<code>/etc/group</code> files and either user or group names are used in the <code>--chown</code>
+flag, the build will fail on the <code>COPY</code> operation. Using numeric IDs requires
+no lookup and will not depend on container root filesystem content.</p> <blockquote><p><strong>Note</strong>:
+If you build using STDIN (<code>docker build - &lt; somefile</code>), there is no
+build context, so <code>COPY</code> can't be used.</p></blockquote> <p>Optionally <code>COPY</code> accepts a flag <code>--from=&lt;name|index&gt;</code> that can be used to set
+the source location to a previous build stage (created with <code>FROM .. AS &lt;name&gt;</code>)
+that will be used instead of a build context sent by the user. The flag also
+accepts a numeric index assigned for all previous build stages started with
+<code>FROM</code> instruction. In case a build stage with a specified name can't be found an
+image with the same name is attempted to be used instead.</p> <p><code>COPY</code> obeys the following rules:</p> <ul><li><p>The <code>&lt;src&gt;</code> path must be inside the <em>context</em> of the build;
+you cannot <code>COPY ../something /something</code>, because the first step of a
+<code>docker build</code> is to send the context directory (and subdirectories) to the
+docker daemon.</p></li> <li><p>If <code>&lt;src&gt;</code> is a directory, the entire contents of the directory are copied,
+including filesystem metadata.</p></li></ul> <blockquote><p><strong>Note</strong>:
+The directory itself is not copied, just its contents.</p></blockquote> <ul><li><p>If <code>&lt;src&gt;</code> is any other kind of file, it is copied individually along with
+its metadata. In this case, if <code>&lt;dest&gt;</code> ends with a trailing slash <code>/</code>, it
+will be considered a directory and the contents of <code>&lt;src&gt;</code> will be written
+at <code>&lt;dest&gt;/base(&lt;src&gt;)</code>.</p></li> <li><p>If multiple <code>&lt;src&gt;</code> resources are specified, either directly or due to the
+use of a wildcard, then <code>&lt;dest&gt;</code> must be a directory, and it must end with
+a slash <code>/</code>.</p></li> <li><p>If <code>&lt;dest&gt;</code> does not end with a trailing slash, it will be considered a
+regular file and the contents of <code>&lt;src&gt;</code> will be written at <code>&lt;dest&gt;</code>.</p></li> <li><p>If <code>&lt;dest&gt;</code> doesn't exist, it is created along with all missing directories
+in its path.</p></li></ul> <h2 id="entrypoint"><a href="#entrypoint" class="header-anchor">#</a> ENTRYPOINT</h2> <p>ENTRYPOINT has two forms:</p> <ul><li><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code>
+(<em>exec</em> form, preferred)</li> <li><code>ENTRYPOINT command param1 param2</code>
+(<em>shell</em> form)</li></ul> <p>An <code>ENTRYPOINT</code> allows you to configure a container that will run as an executable.</p> <p>For example, the following will start nginx with its default content, listening
+on port 80:</p> <div class="language- extra-class"><pre><code>docker run -i -t --rm -p 80:80 nginx
+</code></pre></div><p>Command line arguments to <code>docker run &lt;image&gt;</code> will be appended after all
+elements in an <em>exec</em> form <code>ENTRYPOINT</code>, and will override all elements specified
+using <code>CMD</code>.
+This allows arguments to be passed to the entry point, i.e., <code>docker run &lt;image&gt; -d</code>
+will pass the <code>-d</code> argument to the entry point.
+You can override the <code>ENTRYPOINT</code> instruction using the <code>docker run --entrypoint</code>
+flag.</p> <p>The <em>shell</em> form prevents any <code>CMD</code> or <code>run</code> command line arguments from being
+used, but has the disadvantage that your <code>ENTRYPOINT</code> will be started as a
+subcommand of <code>/bin/sh -c</code>, which does not pass signals.
+This means that the executable will not be the container's <code>PID 1</code> - and
+will <em>not</em> receive Unix signals - so your executable will not receive a
+<code>SIGTERM</code> from <code>docker stop &lt;container&gt;</code>.</p> <p>Only the last <code>ENTRYPOINT</code> instruction in the <code>Dockerfile</code> will have an effect.</p> <h3 id="exec-form-entrypoint-example"><a href="#exec-form-entrypoint-example" class="header-anchor">#</a> Exec form ENTRYPOINT example</h3> <p>You can use the <em>exec</em> form of <code>ENTRYPOINT</code> to set fairly stable default commands
+and arguments and then use either form of <code>CMD</code> to set additional defaults that
+are more likely to be changed.</p> <div class="language- extra-class"><pre><code>FROM ubuntu
+ENTRYPOINT [&quot;top&quot;, &quot;-b&quot;]
+CMD [&quot;-c&quot;]
+</code></pre></div><p>When you run the container, you can see that <code>top</code> is the only process:</p> <div class="language- extra-class"><pre><code>$ docker run -it --rm --name test  top -H
+top - 08:25:00 up  7:27,  0 users,  load average: 0.00, 0.01, 0.05
+Threads:   1 total,   1 running,   0 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.1 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:   2056668 total,  1616832 used,   439836 free,    99352 buffers
+KiB Swap:  1441840 total,        0 used,  1441840 free.  1324440 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+    1 root      20   0   19744   2336   2080 R  0.0  0.1   0:00.04 top
+</code></pre></div><p>To examine the result further, you can use <code>docker exec</code>:</p> <div class="language- extra-class"><pre><code>$ docker exec -it test ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  2.6  0.1  19752  2352 ?        Ss+  08:24   0:00 top -b -H
+root         7  0.0  0.1  15572  2164 ?        R+   08:25   0:00 ps aux
+</code></pre></div><p>And you can gracefully request <code>top</code> to shut down using <code>docker stop test</code>.</p> <p>The following <code>Dockerfile</code> shows using the <code>ENTRYPOINT</code> to run Apache in the
+foreground (i.e., as <code>PID 1</code>):</p> <div class="language- extra-class"><pre class="language-text"><code>FROM debian:stable
+RUN apt-get update &amp;&amp; apt-get install -y --force-yes apache2
+EXPOSE 80 443
+VOLUME [&quot;/var/www&quot;, &quot;/var/log/apache2&quot;, &quot;/etc/apache2&quot;]
+ENTRYPOINT [&quot;/usr/sbin/apache2ctl&quot;, &quot;-D&quot;, &quot;FOREGROUND&quot;]
+</code></pre></div><p>If you need to write a starter script for a single executable, you can ensure that
+the final executable receives the Unix signals by using <code>exec</code> and <code>gosu</code>
+commands:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token shebang important">#!/usr/bin/env bash</span>
+<span class="token builtin class-name">set</span> -e
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$1</span>&quot;</span> <span class="token operator">=</span> <span class="token string">'postgres'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token function">chown</span> -R postgres <span class="token string">&quot;<span class="token variable">$PGDATA</span>&quot;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span><span class="token function">ls</span> -A <span class="token string">&quot;<span class="token variable">$PGDATA</span>&quot;</span><span class="token variable">)</span></span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        gosu postgres initdb
+    <span class="token keyword">fi</span>
+
+    <span class="token builtin class-name">exec</span> gosu postgres <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">exec</span> <span class="token string">&quot;<span class="token variable">$@</span>&quot;</span>
+</code></pre></div><p>Lastly, if you need to do some extra cleanup (or communicate with other containers)
+on shutdown, or are co-ordinating more than one executable, you may need to ensure
+that the <code>ENTRYPOINT</code> script receives the Unix signals, passes them on, and then
+does some more work:</p> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/sh
+# Note: I've written this using sh so it works in the busybox container too
+
+# USE the trap if you need to also do manual cleanup after the service is stopped,
+#     or need to start multiple services in the one container
+trap &quot;echo TRAPed signal&quot; HUP INT QUIT TERM
+
+# start service in background here
+/usr/sbin/apachectl start
+
+echo &quot;[hit enter key to exit] or run 'docker stop &lt;container&gt;'&quot;
+read
+
+# stop service and clean up here
+echo &quot;stopping apache&quot;
+/usr/sbin/apachectl stop
+
+echo &quot;exited $0&quot;
+</code></pre></div><p>If you run this image with <code>docker run -it --rm -p 80:80 --name test apache</code>,
+you can then examine the container's processes with <code>docker exec</code>, or <code>docker top</code>,
+and then ask the script to stop Apache:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ docker <span class="token builtin class-name">exec</span> -it <span class="token builtin class-name">test</span> <span class="token function">ps</span> aux
+<span class="token environment constant">USER</span>       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         <span class="token number">1</span>  <span class="token number">0.1</span>  <span class="token number">0.0</span>   <span class="token number">4448</span>   <span class="token number">692</span> ?        Ss+  00:42   <span class="token number">0</span>:00 /bin/sh /run.sh <span class="token number">123</span> cmd cmd2
+root        <span class="token number">19</span>  <span class="token number">0.0</span>  <span class="token number">0.2</span>  <span class="token number">71304</span>  <span class="token number">4440</span> ?        Ss   00:42   <span class="token number">0</span>:00 /usr/sbin/apache2 -k start
+www-data    <span class="token number">20</span>  <span class="token number">0.2</span>  <span class="token number">0.2</span> <span class="token number">360468</span>  <span class="token number">6004</span> ?        Sl   00:42   <span class="token number">0</span>:00 /usr/sbin/apache2 -k start
+www-data    <span class="token number">21</span>  <span class="token number">0.2</span>  <span class="token number">0.2</span> <span class="token number">360468</span>  <span class="token number">6000</span> ?        Sl   00:42   <span class="token number">0</span>:00 /usr/sbin/apache2 -k start
+root        <span class="token number">81</span>  <span class="token number">0.0</span>  <span class="token number">0.1</span>  <span class="token number">15572</span>  <span class="token number">2140</span> ?        R+   00:44   <span class="token number">0</span>:00 <span class="token function">ps</span> aux
+$ docker <span class="token function">top</span> <span class="token builtin class-name">test</span>
+PID                 <span class="token environment constant">USER</span>                COMMAND
+<span class="token number">10035</span>               root                <span class="token punctuation">{</span>run.sh<span class="token punctuation">}</span> /bin/sh /run.sh <span class="token number">123</span> cmd cmd2
+<span class="token number">10054</span>               root                /usr/sbin/apache2 -k start
+<span class="token number">10055</span>               <span class="token number">33</span>                  /usr/sbin/apache2 -k start
+<span class="token number">10056</span>               <span class="token number">33</span>                  /usr/sbin/apache2 -k start
+$ /usr/bin/time docker stop <span class="token builtin class-name">test</span>
+<span class="token builtin class-name">test</span>
+real	0m <span class="token number">0</span>.27s
+user	0m <span class="token number">0</span>.03s
+sys	0m <span class="token number">0</span>.03s
+</code></pre></div><blockquote><p><strong>Note:</strong> you can override the <code>ENTRYPOINT</code> setting using <code>--entrypoint</code>,
+but this can only set the binary to <em>exec</em> (no <code>sh -c</code> will be used).</p></blockquote> <blockquote><p><strong>Note</strong>:
+The <em>exec</em> form is parsed as a JSON array, which means that
+you must use double-quotes (&quot;) around words not single-quotes (').</p></blockquote> <blockquote><p><strong>Note</strong>:
+Unlike the <em>shell</em> form, the <em>exec</em> form does not invoke a command shell.
+This means that normal shell processing does not happen. For example,
+<code>ENTRYPOINT [ &quot;echo&quot;, &quot;$HOME&quot; ]</code> will not do variable substitution on <code>$HOME</code>.
+If you want shell processing then either use the <em>shell</em> form or execute
+a shell directly, for example: <code>ENTRYPOINT [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]</code>.
+When using the exec form and executing a shell directly, as in the case for
+the shell form, it is the shell that is doing the environment variable
+expansion, not docker.</p></blockquote> <h3 id="shell-form-entrypoint-example"><a href="#shell-form-entrypoint-example" class="header-anchor">#</a> Shell form ENTRYPOINT example</h3> <p>You can specify a plain string for the <code>ENTRYPOINT</code> and it will execute in <code>/bin/sh -c</code>.
+This form will use shell processing to substitute shell environment variables,
+and will ignore any <code>CMD</code> or <code>docker run</code> command line arguments.
+To ensure that <code>docker stop</code> will signal any long running <code>ENTRYPOINT</code> executable
+correctly, you need to remember to start it with <code>exec</code>:</p> <div class="language- extra-class"><pre><code>FROM ubuntu
+ENTRYPOINT exec top -b
+</code></pre></div><p>When you run this image, you'll see the single <code>PID 1</code> process:</p> <div class="language- extra-class"><pre><code>$ docker run -it --rm --name test top
+Mem: 1704520K used, 352148K free, 0K shrd, 0K buff, 140368121167873K cached
+CPU:   5% usr   0% sys   0% nic  94% idle   0% io   0% irq   0% sirq
+Load average: 0.08 0.03 0.05 2/98 6
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+    1     0 root     R     3164   0%   0% top -b
+</code></pre></div><p>Which will exit cleanly on <code>docker stop</code>:</p> <div class="language- extra-class"><pre><code>$ /usr/bin/time docker stop test
+test
+real	0m 0.20s
+user	0m 0.02s
+sys	0m 0.04s
+</code></pre></div><p>If you forget to add <code>exec</code> to the beginning of your <code>ENTRYPOINT</code>:</p> <div class="language- extra-class"><pre><code>FROM ubuntu
+ENTRYPOINT top -b
+CMD --ignored-param1
+</code></pre></div><p>You can then run it (giving it a name for the next step):</p> <div class="language- extra-class"><pre><code>$ docker run -it --name test top --ignored-param2
+Mem: 1704184K used, 352484K free, 0K shrd, 0K buff, 140621524238337K cached
+CPU:   9% usr   2% sys   0% nic  88% idle   0% io   0% irq   0% sirq
+Load average: 0.01 0.02 0.05 2/101 7
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+    1     0 root     S     3168   0%   0% /bin/sh -c top -b cmd cmd2
+    7     1 root     R     3164   0%   0% top -b
+</code></pre></div><p>You can see from the output of <code>top</code> that the specified <code>ENTRYPOINT</code> is not <code>PID 1</code>.</p> <p>If you then run <code>docker stop test</code>, the container will not exit cleanly - the
+<code>stop</code> command will be forced to send a <code>SIGKILL</code> after the timeout:</p> <div class="language- extra-class"><pre><code>$ docker exec -it test ps aux
+PID   USER     COMMAND
+    1 root     /bin/sh -c top -b cmd cmd2
+    7 root     top -b
+    8 root     ps aux
+$ /usr/bin/time docker stop test
+test
+real	0m 10.19s
+user	0m 0.04s
+sys	0m 0.03s
+</code></pre></div><h3 id="understand-how-cmd-and-entrypoint-interact"><a href="#understand-how-cmd-and-entrypoint-interact" class="header-anchor">#</a> Understand how CMD and ENTRYPOINT interact</h3> <p>Both <code>CMD</code> and <code>ENTRYPOINT</code> instructions define what command gets executed when running a container.
+There are few rules that describe their co-operation.</p> <ol><li><p>Dockerfile should specify at least one of <code>CMD</code> or <code>ENTRYPOINT</code> commands.</p></li> <li><p><code>ENTRYPOINT</code> should be defined when using the container as an executable.</p></li> <li><p><code>CMD</code> should be used as a way of defining default arguments for an <code>ENTRYPOINT</code> command
+or for executing an ad-hoc command in a container.</p></li> <li><p><code>CMD</code> will be overridden when running the container with alternative arguments.</p></li></ol> <p>The table below shows what command is executed for different <code>ENTRYPOINT</code> / <code>CMD</code> combinations:</p> <table><thead><tr><th style="text-align:left;"></th> <th style="text-align:left;">No ENTRYPOINT</th> <th style="text-align:left;">ENTRYPOINT exec_entry p1_entry</th> <th style="text-align:left;">ENTRYPOINT [&quot;exec_entry&quot;, &quot;p1_entry&quot;]</th></tr></thead> <tbody><tr><td style="text-align:left;"><strong>No CMD</strong></td> <td style="text-align:left;"><em>error, not allowed</em></td> <td style="text-align:left;">/bin/sh -c exec_entry p1_entry</td> <td style="text-align:left;">exec_entry p1_entry</td></tr> <tr><td style="text-align:left;"><strong>CMD [&quot;exec_cmd&quot;, &quot;p1_cmd&quot;]</strong></td> <td style="text-align:left;">exec_cmd p1_cmd</td> <td style="text-align:left;">/bin/sh -c exec_entry p1_entry</td> <td style="text-align:left;">exec_entry p1_entry exec_cmd p1_cmd</td></tr> <tr><td style="text-align:left;"><strong>CMD [&quot;p1_cmd&quot;, &quot;p2_cmd&quot;]</strong></td> <td style="text-align:left;">p1_cmd p2_cmd</td> <td style="text-align:left;">/bin/sh -c exec_entry p1_entry</td> <td style="text-align:left;">exec_entry p1_entry p1_cmd p2_cmd</td></tr> <tr><td style="text-align:left;"><strong>CMD exec_cmd p1_cmd</strong></td> <td style="text-align:left;">/bin/sh -c exec_cmd p1_cmd</td> <td style="text-align:left;">/bin/sh -c exec_entry p1_entry</td> <td style="text-align:left;">exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd</td></tr></tbody></table> <blockquote><p><strong>Note</strong>: If <code>CMD</code> is defined from the base image, setting <code>ENTRYPOINT</code> will
+reset <code>CMD</code> to an empty value. In this scenario, <code>CMD</code> must be defined in the
+current image to have a value.</p></blockquote> <h2 id="volume"><a href="#volume" class="header-anchor">#</a> VOLUME</h2> <div class="language- extra-class"><pre><code>VOLUME [&quot;/data&quot;]
+</code></pre></div><p>The <code>VOLUME</code> instruction creates a mount point with the specified name
+and marks it as holding externally mounted volumes from native host or other
+containers. The value can be a JSON array, <code>VOLUME [&quot;/var/log/&quot;]</code>, or a plain
+string with multiple arguments, such as <code>VOLUME /var/log</code> or <code>VOLUME /var/log /var/db</code>. For more information/examples and mounting instructions via the
+Docker client, refer to
+<a href="https://docs.docker.com/engine/tutorials/dockervolumes/#/mount-a-host-directory-as-a-data-volume" target="_blank" rel="noopener noreferrer"><em>Share Directories via Volumes</em><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+documentation.</p> <p>The <code>docker run</code> command initializes the newly created volume with any data
+that exists at the specified location within the base image. For example,
+consider the following Dockerfile snippet:</p> <div class="language- extra-class"><pre><code>FROM ubuntu
+RUN mkdir /myvol
+RUN echo &quot;hello world&quot; &gt; /myvol/greeting
+VOLUME /myvol
+</code></pre></div><p>This Dockerfile results in an image that causes <code>docker run</code> to
+create a new mount point at <code>/myvol</code> and copy the  <code>greeting</code> file
+into the newly created volume.</p> <h3 id="notes-about-specifying-volumes"><a href="#notes-about-specifying-volumes" class="header-anchor">#</a> Notes about specifying volumes</h3> <p>Keep the following things in mind about volumes in the <code>Dockerfile</code>.</p> <ul><li><p><strong>Volumes on Windows-based containers</strong>: When using Windows-based containers,
+the destination of a volume inside the container must be one of:</p> <ul><li>a non-existing or empty directory</li> <li>a drive other than <code>C:</code></li></ul></li> <li><p><strong>Changing the volume from within the Dockerfile</strong>: If any build steps change the
+data within the volume after it has been declared, those changes will be discarded.</p></li> <li><p><strong>JSON formatting</strong>: The list is parsed as a JSON array.
+You must enclose words with double quotes (<code>&quot;</code>) rather than single quotes (<code>'</code>).</p></li> <li><p><strong>The host directory is declared at container run-time</strong>: The host directory
+(the mountpoint) is, by its nature, host-dependent. This is to preserve image
+portability, since a given host directory can't be guaranteed to be available
+on all hosts. For this reason, you can't mount a host directory from
+within the Dockerfile. The <code>VOLUME</code> instruction does not support specifying a <code>host-dir</code>
+parameter.  You must specify the mountpoint when you create or run the container.</p></li></ul> <h2 id="user"><a href="#user" class="header-anchor">#</a> USER</h2> <div class="language- extra-class"><pre><code>USER &lt;user&gt;[:&lt;group&gt;]
+</code></pre></div><p>or
+USER <UID>[:<GID>]</GID></UID></p> <p>The <code>USER</code> instruction sets the user name (or UID) and optionally the user
+group (or GID) to use when running the image and for any <code>RUN</code>, <code>CMD</code> and
+<code>ENTRYPOINT</code> instructions that follow it in the <code>Dockerfile</code>.</p> <blockquote><p><strong>Warning</strong>:
+When the user doesn't have a primary group then the image (or the next
+instructions) will be run with the <code>root</code> group.</p></blockquote> <blockquote><p>On Windows, the user must be created first if it's not a built-in account.
+This can be done with the <code>net user</code> command called as part of a Dockerfile.</p></blockquote> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code>    <span class="token keyword">FROM</span> microsoft/windowsservercore
+    <span class="token comment"># Create Windows user in the container</span>
+    <span class="token keyword">RUN</span> net user /add patrick
+    <span class="token comment"># Set it for subsequent commands</span>
+    <span class="token keyword">USER</span> patrick
+</code></pre></div><h2 id="workdir"><a href="#workdir" class="header-anchor">#</a> WORKDIR</h2> <div class="language- extra-class"><pre><code>WORKDIR /path/to/workdir
+</code></pre></div><p>The <code>WORKDIR</code> instruction sets the working directory for any <code>RUN</code>, <code>CMD</code>,
+<code>ENTRYPOINT</code>, <code>COPY</code> and <code>ADD</code> instructions that follow it in the <code>Dockerfile</code>.
+If the <code>WORKDIR</code> doesn't exist, it will be created even if it's not used in any
+subsequent <code>Dockerfile</code> instruction.</p> <p>The <code>WORKDIR</code> instruction can be used multiple times in a <code>Dockerfile</code>. If a
+relative path is provided, it will be relative to the path of the previous
+<code>WORKDIR</code> instruction. For example:</p> <div class="language- extra-class"><pre><code>WORKDIR /a
+WORKDIR b
+WORKDIR c
+RUN pwd
+</code></pre></div><p>The output of the final <code>pwd</code> command in this <code>Dockerfile</code> would be
+<code>/a/b/c</code>.</p> <p>The <code>WORKDIR</code> instruction can resolve environment variables previously set using
+<code>ENV</code>. You can only use environment variables explicitly set in the <code>Dockerfile</code>.
+For example:</p> <div class="language- extra-class"><pre><code>ENV DIRPATH /path
+WORKDIR $DIRPATH/$DIRNAME
+RUN pwd
+</code></pre></div><p>The output of the final <code>pwd</code> command in this <code>Dockerfile</code> would be
+<code>/path/$DIRNAME</code></p> <h2 id="arg"><a href="#arg" class="header-anchor">#</a> ARG</h2> <div class="language- extra-class"><pre><code>ARG &lt;name&gt;[=&lt;default value&gt;]
+</code></pre></div><p>The <code>ARG</code> instruction defines a variable that users can pass at build-time to
+the builder with the <code>docker build</code> command using the <code>--build-arg &lt;varname&gt;=&lt;value&gt;</code>
+flag. If a user specifies a build argument that was not
+defined in the Dockerfile, the build outputs a warning.</p> <div class="language- extra-class"><pre class="language-text"><code>[Warning] One or more build-args [foo] were not consumed.
+</code></pre></div><p>A Dockerfile may include one or more <code>ARG</code> instructions. For example,
+the following is a valid Dockerfile:</p> <div class="language- extra-class"><pre class="language-text"><code>FROM busybox
+ARG user1
+ARG buildno
+...
+</code></pre></div><blockquote><p><strong>Warning:</strong> It is not recommended to use build-time variables for
+passing secrets like github keys, user credentials etc. Build-time variable
+values are visible to any user of the image with the <code>docker history</code> command.</p></blockquote> <h3 id="default-values"><a href="#default-values" class="header-anchor">#</a> Default values</h3> <p>An <code>ARG</code> instruction can optionally include a default value:</p> <div class="language- extra-class"><pre class="language-text"><code>FROM busybox
+ARG user1=someuser
+ARG buildno=1
+...
+</code></pre></div><p>If an <code>ARG</code> instruction has a default value and if there is no value passed
+at build-time, the builder uses the default.</p> <h3 id="scope"><a href="#scope" class="header-anchor">#</a> Scope</h3> <p>An <code>ARG</code> variable definition comes into effect from the line on which it is
+defined in the <code>Dockerfile</code> not from the argument's use on the command-line or
+elsewhere.  For example, consider this Dockerfile:</p> <div class="language- extra-class"><pre class="language-text"><code>1 FROM busybox
+2 USER ${user:-some_user}
+3 ARG user
+4 USER $user
+...
+</code></pre></div><p>A user builds this file by calling:</p> <div class="language- extra-class"><pre class="language-text"><code>$ docker build --build-arg user=what_user .
+</code></pre></div><p>The <code>USER</code> at line 2 evaluates to <code>some_user</code> as the <code>user</code> variable is defined on the
+subsequent line 3. The <code>USER</code> at line 4 evaluates to <code>what_user</code> as <code>user</code> is
+defined and the <code>what_user</code> value was passed on the command line. Prior to its definition by an
+<code>ARG</code> instruction, any use of a variable results in an empty string.</p> <p>An <code>ARG</code> instruction goes out of scope at the end of the build
+stage where it was defined. To use an arg in multiple stages, each stage must
+include the <code>ARG</code> instruction.</p> <div class="language- extra-class"><pre class="language-text"><code>FROM busybox
+ARG SETTINGS
+RUN ./run/setup $SETTINGS
+
+FROM busybox
+ARG SETTINGS
+RUN ./run/other $SETTINGS
+</code></pre></div><h3 id="using-arg-variables"><a href="#using-arg-variables" class="header-anchor">#</a> Using ARG variables</h3> <p>You can use an <code>ARG</code> or an <code>ENV</code> instruction to specify variables that are
+available to the <code>RUN</code> instruction. Environment variables defined using the
+<code>ENV</code> instruction always override an <code>ARG</code> instruction of the same name. Consider
+this Dockerfile with an <code>ENV</code> and <code>ARG</code> instruction.</p> <div class="language- extra-class"><pre class="language-text"><code>1 FROM ubuntu
+2 ARG CONT_IMG_VER
+3 ENV CONT_IMG_VER v1.0.0
+4 RUN echo $CONT_IMG_VER
+</code></pre></div><p>Then, assume this image is built with this command:</p> <div class="language- extra-class"><pre class="language-text"><code>$ docker build --build-arg CONT_IMG_VER=v2.0.1 .
+</code></pre></div><p>In this case, the <code>RUN</code> instruction uses <code>v1.0.0</code> instead of the <code>ARG</code> setting
+passed by the user:<code>v2.0.1</code> This behavior is similar to a shell
+script where a locally scoped variable overrides the variables passed as
+arguments or inherited from environment, from its point of definition.</p> <p>Using the example above but a different <code>ENV</code> specification you can create more
+useful interactions between <code>ARG</code> and <code>ENV</code> instructions:</p> <div class="language- extra-class"><pre class="language-text"><code>1 FROM ubuntu
+2 ARG CONT_IMG_VER
+3 ENV CONT_IMG_VER ${CONT_IMG_VER:-v1.0.0}
+4 RUN echo $CONT_IMG_VER
+</code></pre></div><p>Unlike an <code>ARG</code> instruction, <code>ENV</code> values are always persisted in the built
+image. Consider a docker build without the <code>--build-arg</code> flag:</p> <div class="language- extra-class"><pre class="language-text"><code>$ docker build .
+</code></pre></div><p>Using this Dockerfile example, <code>CONT_IMG_VER</code> is still persisted in the image but
+its value would be <code>v1.0.0</code> as it is the default set in line 3 by the <code>ENV</code> instruction.</p> <p>The variable expansion technique in this example allows you to pass arguments
+from the command line and persist them in the final image by leveraging the
+<code>ENV</code> instruction. Variable expansion is only supported for <a href="#environment-replacement">a limited set of
+Dockerfile instructions.</a></p> <h3 id="predefined-args"><a href="#predefined-args" class="header-anchor">#</a> Predefined ARGs</h3> <p>Docker has a set of predefined <code>ARG</code> variables that you can use without a
+corresponding <code>ARG</code> instruction in the Dockerfile.</p> <ul><li><code>HTTP_PROXY</code></li> <li><code>http_proxy</code></li> <li><code>HTTPS_PROXY</code></li> <li><code>https_proxy</code></li> <li><code>FTP_PROXY</code></li> <li><code>ftp_proxy</code></li> <li><code>NO_PROXY</code></li> <li><code>no_proxy</code></li></ul> <p>To use these, simply pass them on the command line using the flag:</p> <div class="language- extra-class"><pre class="language-text"><code>--build-arg &lt;varname&gt;=&lt;value&gt;
+</code></pre></div><p>By default, these pre-defined variables are excluded from the output of
+<code>docker history</code>. Excluding them reduces the risk of accidentally leaking
+sensitive authentication information in an <code>HTTP_PROXY</code> variable.</p> <p>For example, consider building the following Dockerfile using
+<code>--build-arg HTTP_PROXY=http://user:pass@proxy.lon.example.com</code></p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">FROM</span> ubuntu
+<span class="token keyword">RUN</span> echo <span class="token string">&quot;Hello World&quot;</span>
+</code></pre></div><p>In this case, the value of the <code>HTTP_PROXY</code> variable is not available in the
+<code>docker history</code> and is not cached. If you were to change location, and your
+proxy server changed to <code>http://user:pass@proxy.sfo.example.com</code>, a subsequent
+build does not result in a cache miss.</p> <p>If you need to override this behaviour then you may do so by adding an <code>ARG</code>
+statement in the Dockerfile as follows:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">FROM</span> ubuntu
+<span class="token keyword">ARG</span> HTTP_PROXY
+<span class="token keyword">RUN</span> echo <span class="token string">&quot;Hello World&quot;</span>
+</code></pre></div><p>When building this Dockerfile, the <code>HTTP_PROXY</code> is preserved in the
+<code>docker history</code>, and changing its value invalidates the build cache.</p> <h3 id="automatic-platform-args-in-the-global-scope"><a href="#automatic-platform-args-in-the-global-scope" class="header-anchor">#</a> Automatic platform ARGs in the global scope</h3> <p>This feature is only available when using the <a href="#buildkit">BuildKit</a> backend.</p> <p>Docker predefines a set of <code>ARG</code> variables with information on the platform of
+the node performing the build (build platform) and on the platform of the
+resulting image (target platform). The target platform can be specified with
+the <code>--platform</code> flag on <code>docker build</code>.</p> <p>The following <code>ARG</code> variables are set automatically:</p> <ul><li><code>TARGETPLATFORM</code> - platform of the build result. Eg <code>linux/amd64</code>, <code>linux/arm/v7</code>, <code>windows/amd64</code>.</li> <li><code>TARGETOS</code> - OS component of TARGETPLATFORM</li> <li><code>TARGETARCH</code> - architecture component of TARGETPLATFORM</li> <li><code>TARGETVARIANT</code> - variant component of TARGETPLATFORM</li> <li><code>BUILDPLATFORM</code> - platform of the node performing the build.</li> <li><code>BUILDOS</code> - OS component of BUILDPLATFORM</li> <li><code>BUILDARCH</code> - architecture component of BUILDPLATFORM</li> <li><code>BUILDVARIANT</code> - variant component of BUILDPLATFORM</li></ul> <p>These arguments are defined in the global scope so are not automatically
+available inside build stages or for your <code>RUN</code> commands. To expose one of
+these arguments inside the build stage redefine it without value.</p> <p>For example:</p> <div class="language-Dockerfile extra-class"><pre class="language-dockerfile"><code><span class="token keyword">FROM</span> alpine
+<span class="token keyword">ARG</span> TARGETPLATFORM
+<span class="token keyword">RUN</span> echo <span class="token string">&quot;I'm building for $TARGETPLATFORM&quot;</span>
+</code></pre></div><h3 id="impact-on-build-caching"><a href="#impact-on-build-caching" class="header-anchor">#</a> Impact on build caching</h3> <p><code>ARG</code> variables are not persisted into the built image as <code>ENV</code> variables are.
+However, <code>ARG</code> variables do impact the build cache in similar ways. If a
+Dockerfile defines an <code>ARG</code> variable whose value is different from a previous
+build, then a &quot;cache miss&quot; occurs upon its first usage, not its definition. In
+particular, all <code>RUN</code> instructions following an <code>ARG</code> instruction use the <code>ARG</code>
+variable implicitly (as an environment variable), thus can cause a cache miss.
+All predefined <code>ARG</code> variables are exempt from caching unless there is a
+matching <code>ARG</code> statement in the <code>Dockerfile</code>.</p> <p>For example, consider these two Dockerfile:</p> <div class="language- extra-class"><pre class="language-text"><code>1 FROM ubuntu
+2 ARG CONT_IMG_VER
+3 RUN echo $CONT_IMG_VER
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>1 FROM ubuntu
+2 ARG CONT_IMG_VER
+3 RUN echo hello
+</code></pre></div><p>If you specify <code>--build-arg CONT_IMG_VER=&lt;value&gt;</code> on the command line, in both
+cases, the specification on line 2 does not cause a cache miss; line 3 does
+cause a cache miss.<code>ARG CONT_IMG_VER</code> causes the RUN line to be identified
+as the same as running <code>CONT_IMG_VER=&lt;value&gt;</code> echo hello, so if the <code>&lt;value&gt;</code>
+changes, we get a cache miss.</p> <p>Consider another example under the same command line:</p> <div class="language- extra-class"><pre class="language-text"><code>1 FROM ubuntu
+2 ARG CONT_IMG_VER
+3 ENV CONT_IMG_VER $CONT_IMG_VER
+4 RUN echo $CONT_IMG_VER
+</code></pre></div><p>In this example, the cache miss occurs on line 3. The miss happens because
+the variable's value in the <code>ENV</code> references the <code>ARG</code> variable and that
+variable is changed through the command line. In this example, the <code>ENV</code>
+command causes the image to include the value.</p> <p>If an <code>ENV</code> instruction overrides an <code>ARG</code> instruction of the same name, like
+this Dockerfile:</p> <div class="language- extra-class"><pre class="language-text"><code>1 FROM ubuntu
+2 ARG CONT_IMG_VER
+3 ENV CONT_IMG_VER hello
+4 RUN echo $CONT_IMG_VER
+</code></pre></div><p>Line 3 does not cause a cache miss because the value of <code>CONT_IMG_VER</code> is a
+constant (<code>hello</code>). As a result, the environment variables and values used on
+the <code>RUN</code> (line 4) doesn't change between builds.</p> <h2 id="onbuild"><a href="#onbuild" class="header-anchor">#</a> ONBUILD</h2> <div class="language- extra-class"><pre><code>ONBUILD [INSTRUCTION]
+</code></pre></div><p>The <code>ONBUILD</code> instruction adds to the image a <em>trigger</em> instruction to
+be executed at a later time, when the image is used as the base for
+another build. The trigger will be executed in the context of the
+downstream build, as if it had been inserted immediately after the
+<code>FROM</code> instruction in the downstream <code>Dockerfile</code>.</p> <p>Any build instruction can be registered as a trigger.</p> <p>This is useful if you are building an image which will be used as a base
+to build other images, for example an application build environment or a
+daemon which may be customized with user-specific configuration.</p> <p>For example, if your image is a reusable Python application builder, it
+will require application source code to be added in a particular
+directory, and it might require a build script to be called <em>after</em>
+that. You can't just call <code>ADD</code> and <code>RUN</code> now, because you don't yet
+have access to the application source code, and it will be different for
+each application build. You could simply provide application developers
+with a boilerplate <code>Dockerfile</code> to copy-paste into their application, but
+that is inefficient, error-prone and difficult to update because it
+mixes with application-specific code.</p> <p>The solution is to use <code>ONBUILD</code> to register advance instructions to
+run later, during the next build stage.</p> <p>Here's how it works:</p> <ol><li>When it encounters an <code>ONBUILD</code> instruction, the builder adds a
+trigger to the metadata of the image being built. The instruction
+does not otherwise affect the current build.</li> <li>At the end of the build, a list of all triggers is stored in the
+image manifest, under the key <code>OnBuild</code>. They can be inspected with
+the <code>docker inspect</code> command.</li> <li>Later the image may be used as a base for a new build, using the
+<code>FROM</code> instruction. As part of processing the <code>FROM</code> instruction,
+the downstream builder looks for <code>ONBUILD</code> triggers, and executes
+them in the same order they were registered. If any of the triggers
+fail, the <code>FROM</code> instruction is aborted which in turn causes the
+build to fail. If all triggers succeed, the <code>FROM</code> instruction
+completes and the build continues as usual.</li> <li>Triggers are cleared from the final image after being executed. In
+other words they are not inherited by &quot;grand-children&quot; builds.</li></ol> <p>For example you might add something like this:</p> <div class="language- extra-class"><pre><code>[...]
+ONBUILD ADD . /app/src
+ONBUILD RUN /usr/local/bin/python-build --dir /app/src
+[...]
+</code></pre></div><blockquote><p><strong>Warning</strong>: Chaining <code>ONBUILD</code> instructions using <code>ONBUILD ONBUILD</code> isn't allowed.</p></blockquote> <blockquote><p><strong>Warning</strong>: The <code>ONBUILD</code> instruction may not trigger <code>FROM</code> or <code>MAINTAINER</code> instructions.</p></blockquote> <h2 id="stopsignal"><a href="#stopsignal" class="header-anchor">#</a> STOPSIGNAL</h2> <div class="language- extra-class"><pre><code>STOPSIGNAL signal
+</code></pre></div><p>The <code>STOPSIGNAL</code> instruction sets the system call signal that will be sent to the container to exit.
+This signal can be a valid unsigned number that matches a position in the kernel's syscall table, for instance 9,
+or a signal name in the format SIGNAME, for instance SIGKILL.</p> <h2 id="healthcheck"><a href="#healthcheck" class="header-anchor">#</a> HEALTHCHECK</h2> <p>The <code>HEALTHCHECK</code> instruction has two forms:</p> <ul><li><code>HEALTHCHECK [OPTIONS] CMD command</code> (check container health by running a command inside the container)</li> <li><code>HEALTHCHECK NONE</code> (disable any healthcheck inherited from the base image)</li></ul> <p>The <code>HEALTHCHECK</code> instruction tells Docker how to test a container to check that
+it is still working. This can detect cases such as a web server that is stuck in
+an infinite loop and unable to handle new connections, even though the server
+process is still running.</p> <p>When a container has a healthcheck specified, it has a <em>health status</em> in
+addition to its normal status. This status is initially <code>starting</code>. Whenever a
+health check passes, it becomes <code>healthy</code> (whatever state it was previously in).
+After a certain number of consecutive failures, it becomes <code>unhealthy</code>.</p> <p>The options that can appear before <code>CMD</code> are:</p> <ul><li><code>--interval=DURATION</code> (default: <code>30s</code>)</li> <li><code>--timeout=DURATION</code> (default: <code>30s</code>)</li> <li><code>--start-period=DURATION</code> (default: <code>0s</code>)</li> <li><code>--retries=N</code> (default: <code>3</code>)</li></ul> <p>The health check will first run <strong>interval</strong> seconds after the container is
+started, and then again <strong>interval</strong> seconds after each previous check completes.</p> <p>If a single run of the check takes longer than <strong>timeout</strong> seconds then the check
+is considered to have failed.</p> <p>It takes <strong>retries</strong> consecutive failures of the health check for the container
+to be considered <code>unhealthy</code>.</p> <p><strong>start period</strong> provides initialization time for containers that need time to bootstrap.
+Probe failure during that period will not be counted towards the maximum number of retries.
+However, if a health check succeeds during the start period, the container is considered
+started and all consecutive failures will be counted towards the maximum number of retries.</p> <p>There can only be one <code>HEALTHCHECK</code> instruction in a Dockerfile. If you list
+more than one then only the last <code>HEALTHCHECK</code> will take effect.</p> <p>The command after the <code>CMD</code> keyword can be either a shell command (e.g. <code>HEALTHCHECK CMD /bin/check-running</code>) or an <em>exec</em> array (as with other Dockerfile commands;
+see e.g. <code>ENTRYPOINT</code> for details).</p> <p>The command's exit status indicates the health status of the container.
+The possible values are:</p> <ul><li>0: success - the container is healthy and ready for use</li> <li>1: unhealthy - the container is not working correctly</li> <li>2: reserved - do not use this exit code</li></ul> <p>For example, to check every five minutes or so that a web-server is able to
+serve the site's main page within three seconds:</p> <div class="language- extra-class"><pre><code>HEALTHCHECK --interval=5m --timeout=3s \
+  CMD curl -f http://localhost/ || exit 1
+</code></pre></div><p>To help debug failing probes, any output text (UTF-8 encoded) that the command writes
+on stdout or stderr will be stored in the health status and can be queried with
+<code>docker inspect</code>. Such output should be kept short (only the first 4096 bytes
+are stored currently).</p> <p>When the health status of a container changes, a <code>health_status</code> event is
+generated with the new status.</p> <p>The <code>HEALTHCHECK</code> feature was added in Docker 1.12.</p> <h2 id="shell"><a href="#shell" class="header-anchor">#</a> SHELL</h2> <div class="language- extra-class"><pre><code>SHELL [&quot;executable&quot;, &quot;parameters&quot;]
+</code></pre></div><p>The <code>SHELL</code> instruction allows the default shell used for the <em>shell</em> form of
+commands to be overridden. The default shell on Linux is <code>[&quot;/bin/sh&quot;, &quot;-c&quot;]</code>, and on
+Windows is <code>[&quot;cmd&quot;, &quot;/S&quot;, &quot;/C&quot;]</code>. The <code>SHELL</code> instruction <em>must</em> be written in JSON
+form in a Dockerfile.</p> <p>The <code>SHELL</code> instruction is particularly useful on Windows where there are
+two commonly used and quite different native shells: <code>cmd</code> and <code>powershell</code>, as
+well as alternate shells available including <code>sh</code>.</p> <p>The <code>SHELL</code> instruction can appear multiple times. Each <code>SHELL</code> instruction overrides
+all previous <code>SHELL</code> instructions, and affects all subsequent instructions. For example:</p> <div class="language- extra-class"><pre><code>FROM microsoft/windowsservercore
+
+# Executed as cmd /S /C echo default
+RUN echo default
+
+# Executed as cmd /S /C powershell -command Write-Host default
+RUN powershell -command Write-Host default
+
+# Executed as powershell -command Write-Host hello
+SHELL [&quot;powershell&quot;, &quot;-command&quot;]
+RUN Write-Host hello
+
+# Executed as cmd /S /C echo hello
+SHELL [&quot;cmd&quot;, &quot;/S&quot;, &quot;/C&quot;]
+RUN echo hello
+</code></pre></div><p>The following instructions can be affected by the <code>SHELL</code> instruction when the
+<em>shell</em> form of them is used in a Dockerfile: <code>RUN</code>, <code>CMD</code> and <code>ENTRYPOINT</code>.</p> <p>The following example is a common pattern found on Windows which can be
+streamlined by using the <code>SHELL</code> instruction:</p> <div class="language- extra-class"><pre><code>...
+RUN powershell -command Execute-MyCmdlet -param1 &quot;c:\foo.txt&quot;
+...
+</code></pre></div><p>The command invoked by docker will be:</p> <div class="language- extra-class"><pre><code>cmd /S /C powershell -command Execute-MyCmdlet -param1 &quot;c:\foo.txt&quot;
+</code></pre></div><p>This is inefficient for two reasons. First, there is an un-necessary cmd.exe command
+processor (aka shell) being invoked. Second, each <code>RUN</code> instruction in the <em>shell</em>
+form requires an extra <code>powershell -command</code> prefixing the command.</p> <p>To make this more efficient, one of two mechanisms can be employed. One is to
+use the JSON form of the RUN command such as:</p> <div class="language- extra-class"><pre><code>...
+RUN [&quot;powershell&quot;, &quot;-command&quot;, &quot;Execute-MyCmdlet&quot;, &quot;-param1 \&quot;c:\\foo.txt\&quot;&quot;]
+...
+</code></pre></div><p>While the JSON form is unambiguous and does not use the un-necessary cmd.exe,
+it does require more verbosity through double-quoting and escaping. The alternate
+mechanism is to use the <code>SHELL</code> instruction and the <em>shell</em> form,
+making a more natural syntax for Windows users, especially when combined with
+the <code>escape</code> parser directive:</p> <div class="language- extra-class"><pre><code># escape=`
+
+FROM microsoft/nanoserver
+SHELL [&quot;powershell&quot;,&quot;-command&quot;]
+RUN New-Item -ItemType Directory C:\Example
+ADD Execute-MyCmdlet.ps1 c:\example\
+RUN c:\example\Execute-MyCmdlet -sample 'hello world'
+</code></pre></div><p>Resulting in:</p> <div class="language- extra-class"><pre><code>PS E:\docker\build\shell&gt; docker build -t shell .
+Sending build context to Docker daemon 4.096 kB
+Step 1/5 : FROM microsoft/nanoserver
+ ---&gt; 22738ff49c6d
+Step 2/5 : SHELL powershell -command
+ ---&gt; Running in 6fcdb6855ae2
+ ---&gt; 6331462d4300
+Removing intermediate container 6fcdb6855ae2
+Step 3/5 : RUN New-Item -ItemType Directory C:\Example
+ ---&gt; Running in d0eef8386e97
+
+
+    Directory: C:\
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       10/28/2016  11:26 AM                Example
+
+
+ ---&gt; 3f2fbf1395d9
+Removing intermediate container d0eef8386e97
+Step 4/5 : ADD Execute-MyCmdlet.ps1 c:\example\
+ ---&gt; a955b2621c31
+Removing intermediate container b825593d39fc
+Step 5/5 : RUN c:\example\Execute-MyCmdlet 'hello world'
+ ---&gt; Running in be6d8e63fe75
+hello world
+ ---&gt; 8e559e9bf424
+Removing intermediate container be6d8e63fe75
+Successfully built 8e559e9bf424
+PS E:\docker\build\shell&gt;
+</code></pre></div><p>The <code>SHELL</code> instruction could also be used to modify the way in which
+a shell operates. For example, using <code>SHELL cmd /S /C /V:ON|OFF</code> on Windows, delayed
+environment variable expansion semantics could be modified.</p> <p>The <code>SHELL</code> instruction can also be used on Linux should an alternate shell be
+required such as <code>zsh</code>, <code>csh</code>, <code>tcsh</code> and others.</p> <p>The <code>SHELL</code> feature was added in Docker 1.12.</p> <h2 id="external-implementation-features"><a href="#external-implementation-features" class="header-anchor">#</a> External implementation features</h2> <p>This feature is only available when using the  <a href="#buildkit">BuildKit</a> backend.</p> <p>Docker build supports experimental features like cache mounts, build secrets and
+ssh forwarding that are enabled by using an external implementation of the
+builder with a syntax directive. To learn about these features, <a href="https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/experimental.md" target="_blank" rel="noopener noreferrer">refer to the documentation in BuildKit repository<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h2 id="dockerfile-examples"><a href="#dockerfile-examples" class="header-anchor">#</a> Dockerfile examples</h2> <p>Below you can see some examples of Dockerfile syntax. If you're interested in
+something more realistic, take a look at the list of <a href="https://docs.docker.com/engine/examples/" target="_blank" rel="noopener noreferrer">Dockerization examples<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <div class="language- extra-class"><pre class="language-text"><code># Nginx
+#
+# VERSION               0.0.1
+
+FROM      ubuntu
+LABEL Description=&quot;This image is used to start the foobar executable&quot; Vendor=&quot;ACME Products&quot; Version=&quot;1.0&quot;
+RUN apt-get update &amp;&amp; apt-get install -y inotify-tools nginx apache2 openssh-server
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code># Firefox over VNC
+#
+# VERSION               0.3
+
+FROM ubuntu
+
+# Install vnc, xvfb in order to create a 'fake' display and firefox
+RUN apt-get update &amp;&amp; apt-get install -y x11vnc xvfb firefox
+RUN mkdir ~/.vnc
+# Setup a password
+RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
+# Autostart firefox (might not be the best way, but it does the trick)
+RUN bash -c 'echo &quot;firefox&quot; &gt;&gt; /.bashrc'
+
+EXPOSE 5900
+CMD    [&quot;x11vnc&quot;, &quot;-forever&quot;, &quot;-usepw&quot;, &quot;-create&quot;]
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code># Multiple images example
+#
+# VERSION               0.1
+
+FROM ubuntu
+RUN echo foo &gt; bar
+# Will output something like ===&gt; 907ad6c2736f
+
+FROM ubuntu
+RUN echo moo &gt; oink
+# Will output something like ===&gt; 695d7793cbe4
+
+# You'll now have two images, 907ad6c2736f with /bar, and 695d7793cbe4 with
+# /oink.
+</code></pre></div></div> <!----></div> <div class="col-md-2"><div class="gitfe-page-toc"><ul class="sidebar-links theme-gitfe-page-sider sidebar-sub-header"><li><a href="/docs/docker/dockerfile-reference-en.html#Usage">Usage</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#BuildKit">BuildKit</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Format">Format</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Parser directives">Parser directives</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#syntax">syntax</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Official releases">Official releases</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#escape">escape</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Environment replacement">Environment replacement</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#.dockerignore file">.dockerignore file</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#FROM">FROM</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Understand how ARG and FROM interact">Understand how ARG and FROM interact</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#RUN">RUN</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Known issues (RUN)">Known issues (RUN)</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#CMD">CMD</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#LABEL">LABEL</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#MAINTAINER (deprecated)">MAINTAINER (deprecated)</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#EXPOSE">EXPOSE</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#ENV">ENV</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#ADD">ADD</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#COPY">COPY</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#ENTRYPOINT">ENTRYPOINT</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Exec form ENTRYPOINT example">Exec form ENTRYPOINT example</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Shell form ENTRYPOINT example">Shell form ENTRYPOINT example</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Understand how CMD and ENTRYPOINT interact">Understand how CMD and ENTRYPOINT interact</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#VOLUME">VOLUME</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Notes about specifying volumes">Notes about specifying volumes</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#USER">USER</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#WORKDIR">WORKDIR</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#ARG">ARG</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Default values">Default values</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Scope">Scope</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Using ARG variables">Using ARG variables</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Predefined ARGs">Predefined ARGs</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Automatic platform ARGs in the global scope">Automatic platform ARGs in the global scope</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Impact on build caching">Impact on build caching</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#ONBUILD">ONBUILD</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#STOPSIGNAL">STOPSIGNAL</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#HEALTHCHECK">HEALTHCHECK</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#SHELL">SHELL</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#External implementation features">External implementation features</a></li><li><a href="/docs/docker/dockerfile-reference-en.html#Dockerfile examples">Dockerfile examples</a></li></ul></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com//wsdo/feup/edit/master/docs/docker/dockerfile-reference-en.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">a year ago</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/docker/" class="prev router-link-active">git 基础、进阶</a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e12822b7.js" defer></script><script src="/assets/js/2.9b37cf84.js" defer></script><script src="/assets/js/49.d3ff1cb7.js" defer></script>
+  </body>
+</html>
