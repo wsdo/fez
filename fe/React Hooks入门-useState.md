@@ -21,7 +21,9 @@ function Example() {
   )
 }
 ```
-state 只在组件首次渲染的时候被创建。在下一次重新渲染时，useState 返回给我们当前的 state。
+* state 只在组件首次渲染的时候被创建。在下一次重新渲染时，useState 返回给我们当前的 state。
+* 与 class 组件中的 setState 方法不同，如果你修改状态的时候，传的状态值没有变化，则不重新渲染
+* 与 class 组件中的 setState 方法不同，useState 不会自动合并更新对象。你可以用函数式的 setState 结合展开运算符来达到合并更新对象的效果
 
 ## useState 实践
 
