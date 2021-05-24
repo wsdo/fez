@@ -5,7 +5,7 @@
 - 为什么要学习 Linux
 - Linux的历史
 - Linux系统认知
-- 系统文件目录说明
+- Linux 系统目录结构
 
 
 ## 为什么要学习 Linux
@@ -51,4 +51,44 @@ Linux的发行版说简单点，就是将Linux内核与应用软件做一个打�
 
 Linux发行版下载列表（清华镜像）https://mirrors.tuna.tsinghua.edu.cn/
 
+## Linux 系统目录结构
 
+登录Linux系统后，在当前命令窗口下输入命令：
+
+``` BASH
+ls / 
+```
+
+
+## 搭建基础的Linux环境
+
+1. 下载docker软件安装，docker顶部图标右侧 > Preferences选项 > Docker Engine 配置参数（镜像加速）
+
+``` json
+{
+  "experimental": false,
+  "debug": true,
+  "registry-mirrors": [
+    "https://gd77gs75.mirror.aliyuncs.com"
+  ],
+  "builder": {
+    "gc": {
+      "enabled": true,
+      "defaultKeepStorage": "20GB"
+    }
+  }
+}
+```
+
+2. 下载Linux环境(centos系统)，并进入centos系统环境。
+
+终端输入：
+
+``` BASH
+docker pull centos
+docker run -d -it --name centos -p 6000:6000 centos
+docker ps # 查看是否启动
+docker attach centos # 进入centos系统
+```
+
+PS: 输入exit退出系统
