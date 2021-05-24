@@ -6,6 +6,7 @@ coverage
 pubilc
 yarn.lock
 package.lock
+package-lock.json
 deploy-log.log
 test.sh
 .DS_Store
