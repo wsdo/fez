@@ -80,8 +80,7 @@ ps: 如果你要修改一些系统程序的配置，十有八九要到 etc 目�
 - /var 这个名字是历史遗留的，现在该目录最主要的作用是存储日志（log）信息，比如说程序崩溃，防火墙检测到异常等等信息都会记录在这里。
 
 
-
-## 搭建基础的Linux环境
+## 作业：搭建基础的Linux环境
 
 1. 下载docker软件安装，docker顶部图标右侧 > Preferences选项 > Docker Engine 配置参数（镜像加速）
 
@@ -101,6 +100,8 @@ ps: 如果你要修改一些系统程序的配置，十有八九要到 etc 目�
 }
 ```
 
+<div><img src="https://img.kaikeba.com/a/14815152501202aeci.png" /></div>
+
 2. 下载Linux环境(centos系统)，并进入centos系统环境。
 
 终端输入：
@@ -114,7 +115,11 @@ docker attach centos # 进入centos系统
 
 PS: 输入exit退出系统
 
-3. 在次进入centos系统环境，输入
+判断是否进入Linux系统，如图：
+
+<div><img src="https://img.kaikeba.com/a/60325152501202kkon.png" /></div>
+
+3. 在次进入centos系统环境，终端输入：
 
 ``` BASH
 docker start centos
