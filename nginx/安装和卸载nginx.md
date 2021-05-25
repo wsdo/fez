@@ -1,3 +1,15 @@
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [安装和卸载 nginx](#安装和卸载-nginx)
+  - [安装方式](#安装方式)
+  - [安装](#安装)
+  - [启动](#启动)
+  - [卸载](#卸载)
+
+<!-- /code_chunk_output -->
+
 # 安装和卸载 nginx
 
 ## 安装方式
