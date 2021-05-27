@@ -28,6 +28,8 @@
 docker pull ubuntu
 docker run -d -it --name ubuntu -p 6000:6000 ubuntu
 docker attach ubuntu # 进入ubuntu系统
+apt update # 更新apt资源
+apt install sudo wget vim xz-utils -y # 安装需要的软件包
 ```
 
 PS: 输入exit退出系统！
@@ -42,3 +44,13 @@ PS: 输入exit退出系统！
 docker start ubuntu
 docker attach ubuntu
 ```
+
+## 重置环境方法
+
+1. 移除环境容器
+
+``` BASH
+docker rm ubuntu
+```
+
+2. 重复 搭建Linux环境 教程的第二步开始即可！
