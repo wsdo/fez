@@ -5,7 +5,9 @@
 - 为什么要学习 Linux
 - Linux的历史
 - Linux系统认知
-- Linux 系统目录结构
+- Linux系统目录结构
+- Linux常用基础命令
+- 实战安装node应用
 
 ## 为什么要学习 Linux
 
@@ -21,7 +23,6 @@
 cd /home
 ls
 clear
-rm -r node_moduels
 ```
 
 ## Linux的历史
@@ -36,7 +37,7 @@ Linux系统有很多个不同发行版本，Linux的发行版说简单点，就�
 
 Linux可安装在各种计算机硬件设备中，比如手机、平板电脑、路由器、嵌入式硬件、台式计算机、游戏机和超级计算机等等。
 
-较知名的发行版有：Ubuntu、CentOS、RedHat、Debain、Kali、Fedora、Bodhi、OpenSUSE、Turbolinux、Neptune、Solus、Zorin、SlackWare等
+较知名的发行版有：Ubuntu、CentOS、RedHat、Debian、Kali、Fedora、Bodhi、OpenSUSE、Turbolinux、Neptune、Solus、Zorin、SlackWare等
 
 ## 搭建基础的Linux环境
 
@@ -74,7 +75,7 @@ apt install sudo wget vim xz-utils -y # 安装需要的软件包
 
 PS: 输入exit退出系统！
 
-在次进入ubuntu系统环境，终端输入：
+进入ubuntu系统环境，终端输入：
 
 ``` BASH
 docker start ubuntu
@@ -96,6 +97,7 @@ docker attach ubuntu
 - /tmp 目录是用来存放一些临时文件的。
 - /etc 目录用来存放系统中的配置文件，基本上所有的配置文件都可以在这里找到。例如：配置系统环境变量
   - /etc/profile 用来设置系统环境参数，对系统内所有用户生效
+  - /etc/hosts 局域网域名配置
 - /root 该目录为系统管理员，也称作超级权限者的用户主目录。
 
 ### 其它目录介绍
@@ -217,7 +219,7 @@ cp -rf zbook /home/hello # 复制zbook目录 到 home目录内，并且把zbook�
 cp -f /zbook/file.md /home/yyds.md # 复制file.md文件到home目录内，并将文件名更改成 yyds.md
 ```
 
-## 在Linux系统安装node
+## 实践：动手安装node
 
 tar命令 – 解压缩文件
 
@@ -231,7 +233,7 @@ f -使用指定的存档文件
 tar xf mydata.tar.gz # 解压mydata.tar.gz文件到当前目录内
 ```
 
-实战安装流程：
+安装流程：
 
 ``` BASH
 cd /tmp

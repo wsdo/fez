@@ -22,4 +22,11 @@ pageClass: DocLayout
 * 进程管理
 * mysql备份
   
-https://npm.taobao.org/mirrors/node/v14.16.1/node-v14.16.1-linux-x64.tar.xz
+## 课程大钢
+
+- 为什么要学习 Linux
+- Linux的历史
+- Linux系统认知
+- Linux系统目录结构
+- Linux常用基础命令
+- 实战安装node应用
