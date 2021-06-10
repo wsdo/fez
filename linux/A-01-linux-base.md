@@ -11,7 +11,7 @@
 
 ## 为什么要学习 Linux
 
-相信大部人步入社会后，在学习新的知识内心想法总有目的性，或许是因为工作硬性需求，或许自己的兴趣爱好，也或许因为真香定律的诱惑。
+相信大部人步入社会后，在学习新的知识内心想法总有目的性，或许是因为工作硬性需求，或许自己的兴趣爱好。
 
 那么我们学习Linux基础后有什么好处呢？
 
@@ -29,15 +29,13 @@ clear
 
 Linux 内核最初是由李纳斯•托瓦兹（Linus Torvalds）在赫尔辛基大学读书时出于个人爱好而编写的，当时他觉得教学用的迷你版 Unix 操作系统 Minix 太难用了，于是决定自己开发一个操作系统。Linux第 1 版本于 1991 年 9 月发布开源。
 
-Mac系统其实是基于Unix内核开发的，但Unix和Linux上使用很多指令基本都通用的！
-
 ## Linux系统认知
 
 Linux系统有很多个不同发行版本，Linux的发行版说简单点，就是将Linux内核与应用软件做一个打包。
 
-Linux可安装在各种计算机硬件设备中，比如手机、平板电脑、路由器、嵌入式硬件、台式计算机、游戏机和超级计算机等等。
+较知名的发行版有：Ubuntu、CentOS、RedHat、Debian、Kali、Fedora、Bodhi、OpenSUSE、Turbolinux、Neptune、Solus、Zorin、SlackWare等。
 
-较知名的发行版有：Ubuntu、CentOS、RedHat、Debian、Kali、Fedora、Bodhi、OpenSUSE、Turbolinux、Neptune、Solus、Zorin、SlackWare等
+Linux可安装在各种计算机硬件设备中，比如手机、平板电脑、路由器、智能设备、台式计算机、游戏机和超级计算机等等。
 
 ## 搭建基础的Linux环境
 
@@ -84,7 +82,7 @@ docker attach ubuntu
 
 ## Linux 系统目录结构
 
-<img src="https://segmentfault.com/img/remote/1460000038497713/view" />
+<img src="https://cdn.nlark.com/yuque/0/2021/png/1650764/1622097528939-e5ec6ba0-9f5a-469a-bfa8-d4b251652625.png" />
 
 ### 常用目录
 
